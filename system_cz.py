@@ -17,9 +17,7 @@ def install(e):
     install = Tk()
     pip_pyinstaller = Button(install, text='pyinstall安装')
     pip_pygame = Button(install, text='pygame安装')
-    pip_pyqt = Button(install, text='pyqt5安装')
     pip_Requests = Button(install, text='Requests安装')
-    pip_wxpython = Button(install, text='wxpython安装')
     def pyinstaller(e):
         os.system('pip install pyinstaller')
         messagebox.showinfo('pip install', ok)
@@ -28,17 +26,8 @@ def install(e):
         os.system('pip install pygame')
         messagebox.showinfo('pip install', ok)
         pass
-    def pyqt(e):
-        os.system('pip install pyqt5')
-        os.system('pip install PyQtWebEngine')
-        messagebox.showinfo('pip install', ok)
-        pass
     def Requests(e):
         os.system('pip install Requests')
-        messagebox.showinfo('pip install', ok)
-        pass
-    def wxpython(e):
-        os.system('pip install wxpython')
         messagebox.showinfo('pip install', ok)
         pass
     def nuitka(e):
@@ -53,18 +42,51 @@ def install(e):
         os.system('pip install pywin32')
         messagebox.showinfo(install_1, ok)
         pass
-    pip_pyqt.bind('<Button-1>', pyqt)
+    def GUI_install():
+        GUI = Tk()
+        GUI.title('图形化安装')
+        GUI.geometry('200x200+500+400')
+        # mainloop
+        def wxpython(e):
+            os.system('pip install wxpython')
+            messagebox.showinfo('pip install', ok)
+            pass
+        def pyqt(e):
+            os.system('pip install pyqt5')
+            os.system('pip install PyQtWebEngine')
+            messagebox.showinfo('pip install', ok)
+            pass
+        def Pyside():
+            os.system("pip install pyside")
+            messagebox.showinfo(install_1, ok)
+            pass
+        def pyGTK():
+            os.system("pip install pygtk")
+            messagebox.showinfo(install_1,ok)
+            pass
+        # Button
+        pip_pyqt = Button(GUI, text='pyqt5安装',command=pyqt)
+        pip_wxpython = Button(GUI, text='wxpython安装', command=wxpython)
+        pip_pyside = Button(GUI, text='pyside安装',command=Pyside)
+        pip_pygtk = Button(GUI, text='pygtk安装', command=pyGTK)
+        # pack
+        pip_pyqt.pack()
+        pip_wxpython.pack()
+        pip_pyside.pack()
+        pip_pygtk.pack()
+        # mainloop 2
+        GUI.mainloop()
+        pass    
     pip_pygame.bind('<Button-1>', pygame)
     pip_pyinstaller.bind('<Button-1>', pyinstaller)
     pip_Requests.bind('<Button-1>', Requests)
-    pip_wxpython.bind('<Button-1>', wxpython)
     pip_nuitka = Button(install, text='nuitka安装', command=nuitka)
     pip_tqdm = Button(install, text='tqdm安装', command=tqdm)
     pip_pywin32 = Button(install, text='pywin32安装', command=pywin32)
+    pip_GUI_install = Button(install, text='GUI库安装', command=GUI_install)
     # 载入按钮
-    pip_pyqt.pack()
+    pip_GUI_install.pack()
     pip_pygame.pack()
-    pip_wxpython.pack()
     pip_Requests.pack()
     pip_pyinstaller.pack()
     pip_nuitka.pack()
@@ -158,8 +180,9 @@ def update(e):
     1.5 新增wxpython库安装和删除
     1.6 加入关于模块
     1.7 新增一个小彩蛋
-    1.8 新增nuitka安装和删除''')
-    la_3 = Label(update_window_1, text="当前版本：1.8")
+    1.8 新增nuitka安装和删除
+    1.9 新增tqdm库安装和删除''')
+    la_3 = Label(update_window_1, text="当前版本：1.9")
     la_1.pack()
     la_2.pack()
     la_3.pack()

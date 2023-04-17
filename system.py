@@ -1,3 +1,7 @@
+'''本程序因为编写成了屎山，所以作者决定要把本程序的项目废除！
+本程序已经不再支持和更新，请到'https://github.com/dengrb1/pip-helper'中下载'''
+
+
 from tkinter import *
 from tkinter import messagebox
 import time
