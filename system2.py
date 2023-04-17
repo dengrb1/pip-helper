@@ -2,6 +2,7 @@
 import os
 import webbrowser
 import time
+from tqdm import tqdm
 
 
 # 定义变量
@@ -20,6 +21,17 @@ remove = '删除完成'
 remove_Requests = 'pip uninstall Requests'
 Requests_setup = 'pip install Requests'
 install_text = '1.pyinstaller安装，2.pygame安装，3.pyqt5安装，4.Requests安装,5.返回，6.tqdm安装,7.wxpython安装,8.nuitka安装,9.返回'
+
+
+# 假进度条启动模块
+def run_tqdm():
+    for i in range(10):
+        time.sleep(0.6666)
+        pass
+    pass
+for i in tqdm(range(10)):
+    tqdm()
+
 
 
 # 选择模块测试

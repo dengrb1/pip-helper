@@ -45,6 +45,10 @@ def install(e):
         os.system('pip install nuitka')
         messagebox.showinfo('pip install', ok)
         pass
+    def tqdm():
+        os.system("pip install tqdm")
+        messagebox.showinfo(install_1, ok)
+        pass
     def pywin32(e):
         os.system('pip install pywin32')
         messagebox.showinfo(install_1, ok)
@@ -55,6 +59,7 @@ def install(e):
     pip_Requests.bind('<Button-1>', Requests)
     pip_wxpython.bind('<Button-1>', wxpython)
     pip_nuitka = Button(install, text='nuitka安装', command=nuitka)
+    pip_tqdm = Button(install, text='tqdm安装', command=tqdm)
     pip_pywin32 = Button(install, text='pywin32安装', command=pywin32)
     # 载入按钮
     pip_pyqt.pack()
@@ -63,6 +68,7 @@ def install(e):
     pip_Requests.pack()
     pip_pyinstaller.pack()
     pip_nuitka.pack()
+    pip_tqdm.pack()
     pip_pywin32.pack()
     # 初始化程序
     install.title('安装模式')
