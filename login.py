@@ -11,10 +11,10 @@ def validate_password():
     input_pass = hashlib.sha256(password_entry.get().encode('utf-8')).hexdigest()
 
     if input_user == username and input_pass == password_hash:
-        messagebox.showinfo('Login', 'Login successful')
+        messagebox.showinfo('Login', '密码正确')
         password_entry.delete(0, END)
     else:
-        messagebox.showerror('Login', 'Invalid username or password')
+        messagebox.showerror('Login', '密码错误')
         password_entry.delete(0, END)
 
 # 创建主窗口
