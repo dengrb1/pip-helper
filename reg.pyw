@@ -1,25 +1,30 @@
 from tkinter import *
-from tkinter import messagebox, ttk
-
+from tkinter import ttk
 
 root = Tk()
+root.title("注册程序")
 
-e1 = ttk.Entry(root)
-e2 = ttk.Entry(root)
-l1 = ttk.Label(root, text='用户名：')
-l2 = ttk.Label(root, text='密码：')
+username_label = ttk.Label(root, text="用户名:")
+username_label.pack()
 
+username_entry = ttk.Entry(root)
+username_entry.pack()
 
-def ok():
-    input_username = e1.get()
-    input_password = e2.get()
-    if input_username and input_password != None:
-        with open('password.md','w'):
-            pass
-        pass
-    else:
+password_label = ttk.Label(root, text="密码:")
+password_label.pack()
+
+password_entry = ttk.Entry(root, show="*")
+password_entry.pack()
+
+def register():
+    username = username_entry.get()
+    password = password_entry.get()
+    with open("c:\\username.md", "w") as f:
+        f.write(f"{username},{password}")
         pass
     pass
 
+register_button = ttk.Button(root, text="注册", command=register)
+register_button.pack()
 
 root.mainloop()
