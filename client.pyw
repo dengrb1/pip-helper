@@ -20,7 +20,7 @@ def windows_run():
 
 def Not_windows_run():
     if os.path.exists('{ml}\system_command.exe'):
-        os.system('python {ml}/Not/system_command.pyw')
+        os.system('python {ml}/Not/system_command.py')
     else:
         messagebox.showerror('system', file_error)
         pass
