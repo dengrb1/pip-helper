@@ -20,7 +20,7 @@ remove_pyqt5 = 'pip uninstall pyqt5'
 remove = '删除完成'
 remove_Requests = 'pip uninstall Requests'
 Requests_setup = 'pip install Requests'
-install_text = '1.pyinstaller安装，2.pygame安装，3.pyqt5安装，4.Requests安装,5.返回，6.tqdm安装,7.wxpython安装,8.nuitka安装,9.返回'
+install_text = '1.pyinstaller安装，2.pygame安装，3.pyqt5安装，4.Requests安装,5.tqdm安装,6.wxpython安装,7.nuitka安装,8.pywin32安装,9.返回'
 
 
 # 假进度条启动模块
@@ -64,29 +64,31 @@ while 1:
                 time.sleep(1)
                 pass
             elif xz_install == 5:
-                break
-            elif xz_install == 6:
                 os.system('pip install tqdm')
                 print(setup_ok)
                 time.sleep(1)
                 pass
-            elif xz_install == 7:
+            elif xz_install == 6:
                 os.system('pip install wxpython')
                 print(setup_ok)
                 time.sleep(1)
                 pass
-            elif xz_install == 8:
+            elif xz_install == 7:
                 os.system('pip install nuitka')
                 print(setup_ok)
                 time.sleep(0.5)
                 pass
+            elif xz_install == 8:
+                os.system('pip install pywin32')
+                print(setup_ok)
+                time.sleep(0.5)
             elif xz_install == 9:
                 break
             pass
         pass
     elif xz == 2:
         while 1:
-            remove_text = '1.pyinstaller删除，2.pygame删除，3.pyqt5删除，4.Requests删除，5.wxpython删除，6.tqdm删除,nuitka安装，8.返回'
+            remove_text = '1.pyinstaller删除，2.pygame删除，3.pyqt5删除，4.Requests删除，5.wxpython删除，6.tqdm删除,7.nuitka安装，8.pywin32删除,9.返回'
             print(remove_text)
             xz_remove = int(input('请选择：'))
             if xz_remove == 1:
@@ -125,7 +127,11 @@ while 1:
                 print(remove)
                 time.sleep(0.5)
                 pass
-            elif xz_remove == 8:
+            elif xz_remove== 8:
+                os.system('pip uninstall pywin32')
+                print(remove)
+                time.sleep(0.5)
+            elif xz_remove == 9:
                 break
             else:
                 print('error:不支持这个参数')
@@ -177,7 +183,7 @@ while 1:
     pass
 
 
-# 程序退出模块(已被废弃)
+# 程序退出模块
 print('程序退出')
 time.sleep(0.62)
 exit()
