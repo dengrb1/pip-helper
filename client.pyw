@@ -1,8 +1,7 @@
 from tkinter import *
-from tkinter import messagebox, ttk
+from tkinter import messagebox
 import platform
 import os
-import webbrowser
 
 
 root = Tk()
@@ -21,7 +20,7 @@ def windows_run():
 
 def Not_windows_run():
     if os.path.exists('{ml}\system_command.exe'):
-        os.system('.\{ml}\Not\system_command.pyw')
+        os.system('python {ml}/Not/system_command.pyw')
     else:
         messagebox.showerror('system', file_error)
         pass
