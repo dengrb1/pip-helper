@@ -13,7 +13,7 @@ file_error = '文件丢失，请重新安装'
 
 def windows_run():
     if os.path.exists("{ml}\system_cz.exe"):
-        os.system('start {ml}\system_cz.exe')
+        os.system('start {ml}\windows\system_cz.exe')
     else:
         messagebox.showerror('system', '文件丢失，请重新安装')
         pass
@@ -21,7 +21,7 @@ def windows_run():
 
 def Not_windows_run():
     if os.path.exists('{ml}\system_command.exe'):
-        os.system('.\{ml}\system_command.pyw')
+        os.system('.\{ml}\Not\system_command.pyw')
     else:
         messagebox.showerror('system', file_error)
         pass
