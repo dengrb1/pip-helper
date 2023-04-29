@@ -5,26 +5,22 @@ import os
 
 
 root = Tk()
-ml = os.getcwd()
+CURRENT_DIR = os.getcwd()
 System = platform.system()
 file_error = '文件丢失，请重新安装'
 
 
 def windows_run():
-    if os.path.exists("{ml}\system_cz.exe"):
-        os.system('start {ml}\windows\system_cz.exe')
+    if os.path.exists(os.path.join(CURRENT_DIR, "system_cz.exe")):
+        os.system("start system_cz.exe")
     else:
-        messagebox.showerror('system', '文件丢失，请重新安装')
-        pass
-    pass
+        messagebox.showerror('update', '重要文件丢失')
 
 def Not_windows_run():
-    if os.path.exists('{ml}\system_command.exe'):
-        os.system('python {ml}/Not/system_command.py')
+    if os.path.exists(os.path.join(CURRENT_DIR, "system_command.py")):
+        os.system("python system_command.py")
     else:
-        messagebox.showerror('system', file_error)
-        pass
-    pass
+        messagebox.showerror('update', '重要文件丢失')
 
 def system_jc():
     if System != 'Windows':
