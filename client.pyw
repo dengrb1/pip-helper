@@ -5,34 +5,29 @@ import os
 
 
 root = Tk()
-CURRENT_DIR = os.getcwd()
+ml = os.getcwd()
 System = platform.system()
 file_error = '文件丢失，请重新安装'
 
 
-def windows_run():
-    if os.path.exists(os.path.join(CURRENT_DIR, "system_cz.exe")):
-        os.system("start system_cz.exe")
+def jc(exe_name):
+    if os.path.exists(os.path.join(ml,f"{exe_name}.exe")):
+        os.system(f"start {exe_name}.exe")
     else:
-        messagebox.showerror('update', '重要文件丢失')
-
-def Not_windows_run():
-    if os.path.exists(os.path.join(CURRENT_DIR, "system_command.py")):
-        os.system("python system_command.py")
-    else:
-        messagebox.showerror('update', '重要文件丢失')
-
-def system_jc():
-    if System != 'Windows':
-        Not_windows_run()
-    else:
-        windows_run()
-        pass
+        messagebox.showerror('system',file_error)
     pass
+    
+def install():
+    jc("install")
+
+def delete():
+    jc("delete")
+
+def gk():
+    jc("gk")
 
 def update():
-    messagebox.showwarning('system', '暂无做完')
-    pass
+    jc("update")
 
 def exit_exe():
     root.destroy()
@@ -40,9 +35,11 @@ def exit_exe():
 
 
 # Button and Label
-Label(root, text='启动器').pack()
-Button(root, text='启动程序', command=system_jc).pack()
+Label(root, text='pip_helper').pack()
+Button(root, text='安装模式', command=install).pack()
+Button(root, text='删除模式', command=delete).pack()
 Button(root, text='更新日志', command=update).pack()
+Button(root, text='关于', command=gk).pack()
 Button(root, text='退出', command=exit_exe).pack()
 
 
