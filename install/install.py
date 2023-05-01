@@ -6,27 +6,24 @@ import os
 root = Tk()
 ok = '安装完成'
 install_1 = 'pip install'
+ml = os.getcwd()
+file_error = '文件丢失，请重新安装'
 
 
+
+def GUI_install():
+    if os.path.exists(os.path.join(ml, "GUI_install.exe")):
+        os.system("start GUI_install.exe")
+    else:
+        messagebox.showerror('install', file_error)
+        pass
+    pass
 def pyinstaller():
     os.system('pip install pyinstaller')
     messagebox.showinfo('pip install', ok)
     pass
-def pygame():
-    os.system('pip install pygame')
-    messagebox.showinfo('pip install', ok)
-    pass
-def pyqt():
-    os.system('pip install pyqt5')
-    os.system('pip install PyQtWebEngine')
-    messagebox.showinfo('pip install', ok)
-    pass
 def Requests():
     os.system('pip install Requests')
-    messagebox.showinfo('pip install', ok)
-    pass
-def wxpython():
-    os.system('pip install wxpython')
     messagebox.showinfo('pip install', ok)
     pass
 def nuitka():
@@ -51,10 +48,7 @@ def numpy():
     pass
 # 按钮
 pip_pyinstaller = Button(root, text='pyinstall安装', command=pyinstaller).pack()
-pip_pygame = Button(root, text='pygame安装', command=pygame).pack()
-pip_pyqt = Button(root, text='pyqt5安装', command=pyqt).pack()
 pip_Requests = Button(root, text='Requests安装', command=Requests).pack()
-pip_wxpython = Button(root, text='wxpython安装', command=wxpython).pack()
 pip_tqdm = Button(root, text='tqdm安装', command=tqdm).pack()
 pip_nuitka = Button(root, text='nuitka安装', command=nuitka).pack()
 pip_pywin32 = Button(root, text='pywin32安装', command=pywin32).pack()
