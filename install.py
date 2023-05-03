@@ -22,10 +22,6 @@ def pyinstaller():
     os.system('pip install pyinstaller')
     messagebox.showinfo('pip install', ok)
     pass
-def Requests():
-    os.system('pip install Requests')
-    messagebox.showinfo('pip install', ok)
-    pass
 def nuitka():
     os.system('pip install nuitka')
     messagebox.showinfo('pip install', ok)
@@ -38,21 +34,15 @@ def tqdm():
     os.system('pip install tqdm')
     messagebox.showinfo(install_1, ok)
     pass
-def django():
-    os.system('pip install django')
-    messagebox.showinfo(install_1, ok)
-    pass
 def numpy():
     os.system('pip install numpy')
     messagebox.showinfo(install_1, ok)
     pass
 # 按钮
 pip_pyinstaller = Button(root, text='pyinstall安装', command=pyinstaller).pack()
-pip_Requests = Button(root, text='Requests安装', command=Requests).pack()
 pip_tqdm = Button(root, text='tqdm安装', command=tqdm).pack()
 pip_nuitka = Button(root, text='nuitka安装', command=nuitka).pack()
 pip_pywin32 = Button(root, text='pywin32安装', command=pywin32).pack()
-pip_django = Button(root, text="django安装", command=django)
 pip_numpy = Button(root, text='numpy安装', command=numpy)
 
 

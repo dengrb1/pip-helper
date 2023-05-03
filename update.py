@@ -15,7 +15,9 @@ la_2 = Label(update, text='''1.0 程序制作完成
 1.6 加入关于模块
 1.7 新增一个小彩蛋
 1.8 新增nuitka安装和删除
-1.9 新增django库安装和删除''').pack()
+1.9 新增django库安装和删除
+2.0 修改窗口参数''').pack()
+la_3 = Label(update, text='当前版本:2.0 (Not beta verison)')
 
 # 定义按钮
 def quit_update():
@@ -26,5 +28,5 @@ quit_window_bt = Button(update, text='返回', command=quit_update)
 
 # 初始化程序
 update.title('更新日志')
-update.geometry('250x250+50+50')
+update.geometry('330x250+50+50')
 update.mainloop()

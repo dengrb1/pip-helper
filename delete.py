@@ -14,21 +14,8 @@ def pyinstaller_remove():
     os.system('pip uninstall pyinstaller')
     messagebox.showinfo('pip uninstall', ok2)
     pass
-def pygame_remove():
-    os.system('pip uninstall pygame')
-    messagebox.showinfo('pip uninstall', ok2)
-    pass
-def wxpython_remove():
-    os.system('pip uninstall wxpython')
-    messagebox.showinfo('pip uninstall', ok2)
-    pass
 def Requests_remove():
     os.system('pip uninstall Requests')
-    messagebox.showinfo('pip uninstall', ok2)
-    pass
-def pyqt_remove():
-    os.system('pip uninstall pyqt5')
-    os.systen('pip uninstall PyQtWebEngine')
     messagebox.showinfo('pip uninstall', ok2)
     pass
 def tqdm_remove():
@@ -56,7 +43,7 @@ remove_pyqt = Button(root, text='pyqt删除', command=pyqt_remove).pack()
 remove_pygame = Button(root, text='pygame删除',command=pygame_remove).pack()
 remove_wxpython = Button(root, text='wxpython删除', command=wxpython_remove).pack()
 remove_Requests = Button(root, text='Requests删除', command=Requests_remove).pack()
-remove_pyinstaller = Button(root, text='pyinstaller安装', command=pyinstaller_remove).pack()
+remove_pyinstaller = Button(root, text='pyinstaller删除', command=pyinstaller_remove).pack()
 remove_tqdm = Button(root, text='tqdm删除', command=tqdm_remove).pack()
 remove_nuitka = Button(root, text='nuitka删除', command=nuitka_remove).pack()
 remove_pywin32 = Button(root, text='pywin32删除', command=pywin32_remove).pack()
