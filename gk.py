@@ -4,7 +4,7 @@ import webbrowser
 
 
 gk_window = Tk()
-url = 'https://github.com/dengrb1/pygk'
+url = 'https://kgithub.com/dengrb1/pip-helper/releases'
 
 
 la_1 = Label(gk_window, text='关于').pack()

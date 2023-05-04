@@ -10,6 +10,7 @@ install = "Install"
 
 def pyqt5():
     os.system("pip install pyqt5")
+    os.systen('pip install PyQtWebEngine')
     messagebox.showinfo(install, ok)
 def wxpython():
     os.system("pip install wxpython")
