@@ -11,13 +11,17 @@ file_error = '文件丢失，请重新安装'
 
 
 
-def GUI_install():
-    if os.path.exists(os.path.join(ml, "GUI_install.exe")):
-        os.system("start GUI_install.exe")
+def open_exe():
+    if os.path.exists(os.path.join(ml, f"{exe_name}.exe")):
+        os.system(f"start {exe_name}.exe")
     else:
         messagebox.showerror('install', file_error)
         pass
     pass
+def gui_install():
+    open_exe('GUI_install')
+def web_install():
+    open_exe('web_install')
 def pyinstaller():
     os.system('pip install pyinstaller')
     messagebox.showinfo('pip install', ok)
@@ -39,6 +43,8 @@ def numpy():
     messagebox.showinfo(install_1, ok)
     pass
 # 按钮
+pip_gui = Button(root, text='GUI类安装', command=gui_install).pack()
+pip_web = Button(root, text='web类安装', command=web_install).pack()
 pip_pyinstaller = Button(root, text='pyinstall安装', command=pyinstaller).pack()
 pip_tqdm = Button(root, text='tqdm安装', command=tqdm).pack()
 pip_nuitka = Button(root, text='nuitka安装', command=nuitka).pack()

@@ -17,6 +17,12 @@ def open_exe(exe_name):
         messagebox.showerror('install', file_error)
         pass
     pass
+def GUI_delete():
+    open_exe('GUI_delete')
+    pass
+def web_delete():
+    open_exe('web_delete')
+    pass
 def pyinstaller_remove():
     os.system('pip uninstall pyinstaller')
     messagebox.showinfo('pip uninstall', ok2)
@@ -38,6 +44,8 @@ def numpy_remove():
     messagebox.showinfo(uninstall, ok2)
     pass
 # 按钮
+remove_GUI = Button(root, text='GUI类删除', command=GUI_delete).pack()
+remove_web = Button(root, text='web类删除', command=web_delete).pack()
 remove_pyinstaller = Button(root, text='pyinstaller删除', command=pyinstaller_remove).pack()
 remove_tqdm = Button(root, text='tqdm删除', command=tqdm_remove).pack()
 remove_nuitka = Button(root, text='nuitka删除', command=nuitka_remove).pack()
