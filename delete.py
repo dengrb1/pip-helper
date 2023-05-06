@@ -45,6 +45,8 @@ def numpy_remove():
     os.system('pip uninstall numpy')
     messagebox.showinfo(uninstall, ok2)
     pass
+def fh():
+    root.destroy()
 # 按钮
 remove_GUI = Button(root, text='GUI类删除', command=GUI_delete).pack()
 remove_web = Button(root, text='web类删除', command=web_delete).pack()
@@ -52,7 +54,8 @@ remove_pyinstaller = Button(root, text='pyinstaller删除', command=pyinstaller_
 remove_tqdm = Button(root, text='tqdm删除', command=tqdm_remove).pack()
 remove_nuitka = Button(root, text='nuitka删除', command=nuitka_remove).pack()
 remove_pywin32 = Button(root, text='pywin32删除', command=pywin32_remove).pack()
-remove_numpy = Button(root ,text="numpy删除", command=numpy_remove)
+remove_numpy = Button(root ,text="numpy删除", command=numpy_remove).pack()
+remove_fh = Button(root, text='返回', command=fh).pack()
 
 
 # 初始化程序

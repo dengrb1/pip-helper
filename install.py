@@ -42,6 +42,8 @@ def numpy():
     os.system('pip install numpy')
     messagebox.showinfo(install_1, ok)
     pass
+def fh():
+    root.destroy()
 # 按钮
 pip_gui = Button(root, text='GUI类安装', command=gui_install).pack()
 pip_web = Button(root, text='web类安装', command=web_install).pack()
@@ -49,7 +51,8 @@ pip_pyinstaller = Button(root, text='pyinstall安装', command=pyinstaller).pack
 pip_tqdm = Button(root, text='tqdm安装', command=tqdm).pack()
 pip_nuitka = Button(root, text='nuitka安装', command=nuitka).pack()
 pip_pywin32 = Button(root, text='pywin32安装', command=pywin32).pack()
-pip_numpy = Button(root, text='numpy安装', command=numpy)
+pip_numpy = Button(root, text='numpy安装', command=numpy).pack()
+pip_fh = Button(root,text='返回', command=fh).pack()
 
 
 # 初始化程序
