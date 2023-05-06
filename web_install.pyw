@@ -25,17 +25,21 @@ def open_exe(exe_name):
         messagebox.showerror('install', file_error)
         pass
     pass
+def fh():
+    root.destroy()
 
 
 # button
 bt_d = Button(root, text='django安装', command=django)
 bt_r = Button(root, text='Requests安装', command=Requests)
+bt_fh = Button(root, text='返回', command=fh)
 
 
 # pack and Label
 Label(root, text='web类安装').pack()
 bt_d.pack()
 bt_r.pack()
+bt_fh.pack()
 
 
 # mainloop
