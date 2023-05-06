@@ -8,11 +8,13 @@ url_update = 'https://kgithub.com/dengrb1/pip-helper/releases'
 
 
 la_1 = Label(update, text='更新日志').pack()
-text = """0.1.0 version is beta and demo version
+text = """0.1.0 程序添加平时常用的库下载安装
+1.0 正式版本发布；修复特定BUG；修复无法使用
+pyqt5库编写浏览器的问题
 
 当前版本:0.1.0"""
 
-text_box = ScrolledText(root)
+text_box = ScrolledText(update)
 text_box.pack(fill=BOTH, expand=1)
 text_box.insert(END, text)
 text_box.configure(state='disabled')
