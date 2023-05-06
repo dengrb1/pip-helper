@@ -4,6 +4,8 @@ import os
 
 # 创建主窗口
 root = Tk()
+ml = os.getcwd()
+file_error = '文件丢失，请重新安装'
 
 # 创建滚动区域的Canvas对象
 canvas = Canvas(root, width=280, height=280, scrollregion=(0, 0, 500, 500))
