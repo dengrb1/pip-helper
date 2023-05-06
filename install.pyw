@@ -39,6 +39,8 @@ def gui_install():
     open_exe('GUI_install')
 def web_install():
     open_exe('web_install')
+def computer_install():
+    open_exe('computer_install')
 def pyinstaller():
     os.system('pip install pyinstaller')
     messagebox.showinfo('pip install', ok)
@@ -65,6 +67,7 @@ def fh():
 # Button
 pip_gui = Button(frame, text='GUI类安装', command=gui_install).pack()
 pip_web = Button(frame, text='web类安装', command=web_install).pack()
+pip_computer = Button(frame, text='机器学习类库安装', command=computer_install).pack()
 pip_pyinstaller = Button(frame, text='pyinstall安装', command=pyinstaller).pack()
 pip_tqdm = Button(frame, text='tqdm安装', command=tqdm).pack()
 pip_nuitka = Button(frame, text='nuitka安装', command=nuitka).pack()

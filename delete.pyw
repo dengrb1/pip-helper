@@ -37,6 +37,8 @@ def GUI_delete():
 def web_delete():
     open_exe('web_delete')
     pass
+def computer_delete():
+    open_exe('computer_delete')
 def pyinstaller_remove():
     os.system('pip uninstall pyinstaller')
     messagebox.showinfo('pip uninstall', ok2)
@@ -64,6 +66,7 @@ def fh():
 # Button
 remove_GUI = Button(frame, text='GUI类删除', command=GUI_delete).pack()
 remove_web = Button(frame, text='web类删除', command=web_delete).pack()
+remove_computer = Button(frame, text='机器学习类删除', command=computer_delete).pack()
 remove_pyinstaller = Button(frame, text='pyinstaller删除', command=pyinstaller_remove).pack()
 remove_tqdm = Button(frame, text='tqdm删除', command=tqdm_remove).pack()
 remove_nuitka = Button(frame, text='nuitka删除', command=nuitka_remove).pack()
