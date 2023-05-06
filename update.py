@@ -29,9 +29,6 @@ text_box.insert(END, text)
 text_box.configure(state='disabled')
 
 
-# Button
-quit_bt = Button(root, text='返回', command=quit_exe).pack()
-
 # mainloop
 root.title('更新日志')
 root.geometry('355x250+400+400')
