@@ -18,18 +18,22 @@ def wxpython():
 def pygame():
     os.system("pip install pygame")
     messagebox.showinfo(install, ok)
+def fh():
+    root.destroy()
 
 
 # Button
 bt_qt = Button(root, text='pyqt5安装', command=pyqt5)
 bt_pygame = Button(root, text='pygame安装', command=pygame)
 bt_wx = Button(root, text='wxpython安装', command=wxpython)
+bt_fh = Button(root, text='返回', command=fh)
 
 # pack and Label
 Label(root, text="GUI install").pack()
 bt_qt.pack()
 bt_pygame.pack()
 bt_wx.pack()
+bt_fh.pack()
 
 
 # mainloop

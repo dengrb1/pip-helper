@@ -22,17 +22,21 @@ def pygame_remove():
     os.system('pip uninstall pygame')
     messagebox.showinfo('pip uninstall', ok2)
     pass
+def fh():
+    root.destroy()
 
 # button
 bt_pq5 = Button(root, text='pyqt5删除', command=pyqt_remove)
 bt_pygame = Button(root, text='pygame删除', command=pygame_remove)
 bt_wxpython = Button(root, text='wxpython删除', command=wxpython_remove)
+bt_fh = Button(root, text='返回', command=fh)
 
 # pack and Label
 Label(root, text='GUI删除').pack()
 bt_pq5.pack()
 bt_pygame.pack()
 bt_wxpython.pack()
+bt_fh.pack()
 
 
 # mainloop
