@@ -30,6 +30,7 @@ def update():
     jc("update")
 
 def exit_exe():
+    os.system('taskkill -f -t -im python.exe')
     root.destroy()
     pass
 
