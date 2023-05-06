@@ -1,39 +1,38 @@
+"""基本上，这个文件都是已经提前写好了下一个版本的内容的
+之后几天基本上都会发布最新版本的内容的"""
+
 from tkinter import *
-from tkinter import messagebox
-import webbrowser
 from tkinter.scrolledtext import ScrolledText
+import webbrowser
+from tkinter import messagebox
 
-update = Tk()
-url_update = 'https://kgithub.com/dengrb1/pip-helper/releases'
+root = Tk()
 
+def quit_exe():
+    root.destroy()
+def update_now():
+    webbrowser.open("https://kgithub.com/dengrb1/chatgpt/releases/")
+    messagebox.showinfo('update', '请选择最新版本并下载运行安装程序，然后就可以更新了！')
 
-la_1 = Label(update, text='更新日志').pack()
-text = """0.1.0 程序添加平时常用的库下载安装
-1.0 正式版本发布；修复特定BUG；修复无法使用
-pyqt5库编写浏览器的问题
+# Label
+update_now_bt = Button(root ,text='在线更新', command=update_now).pack(side=RIGHT)
+quit_bt = Button(root, text='返回', command=quit_exe).pack(side=RIGHT)
+Label(root, text='更新日志').pack()
+text = '''0.1.0 暂无日志
+1.0 正式版本。修复BUG；改正更新日志显示问题
 
-当前版本:0.1.0"""
+当前版本:1.0 (Not beta or demo)'''
 
-text_box = ScrolledText(update)
+text_box = ScrolledText(root)
+text_box.pack(fill=BOTH, expand=1)
 text_box.insert(END, text)
 text_box.configure(state='disabled')
 
 
-# 定义按钮
-def update_now():
-    webbrowser.open(url_update)
-    messagebox.showinfo('update', '请选择最新版本并下载运行安装程序，然后就可以更新了！')
-    pass
-def quit_update():
-    update.destroy()
-    pass
-# 按钮设置
-text_box.pack(fill=BOTH, expand=1, side=RIGHT)
-update_now_bt = Button(update, text='更新到最新版本', command=update_now).pack(side=RIGHT)
-quit_window_bt = Button(update, text='返回', command=quit_update).pack(side=RIGHT)
+# Button
+quit_bt = Button(root, text='返回', command=quit_exe).pack()
 
-
-# 初始化程序
-update.title('更新日志')
-update.geometry('330x250+50+50')
-update.mainloop()
+# mainloop
+root.title('更新日志')
+root.geometry('355x250+400+400')
+root.mainloop()
