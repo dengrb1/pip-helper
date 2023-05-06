@@ -20,8 +20,9 @@ quit_bt = Button(root, text='返回', command=quit_exe).pack(side=RIGHT)
 Label(root, text='更新日志').pack()
 text = '''0.1.0 暂无日志
 1.0 正式版本。修复BUG；改正更新日志显示问题
+1.1 加入机器学习库安装；修复BUG；删除“关于”模块
 
-当前版本:1.0 (Not beta or demo)'''
+当前版本:1.1 (Not beta or demo)'''
 
 text_box = ScrolledText(root)
 text_box.pack(fill=BOTH, expand=1)

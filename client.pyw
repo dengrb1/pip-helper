@@ -24,7 +24,7 @@ def delete():
     jc("delete")
 
 def gk():
-    jc("gk")
+    messagebox.showerror('pip helper','因为程序问题，所以“关于”模块被删除!!!')
 
 def update():
     jc("update")
