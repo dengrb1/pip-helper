@@ -15,7 +15,6 @@ pyqt5库编写浏览器的问题
 当前版本:0.1.0"""
 
 text_box = ScrolledText(update)
-text_box.pack(fill=BOTH, expand=1)
 text_box.insert(END, text)
 text_box.configure(state='disabled')
 
@@ -29,6 +28,7 @@ def quit_update():
     update.destroy()
     pass
 # 按钮设置
+text_box.pack(fill=BOTH, expand=1, side=RIGHT)
 update_now_bt = Button(update, text='更新到最新版本', command=update_now).pack(side=RIGHT)
 quit_window_bt = Button(update, text='返回', command=quit_update).pack(side=RIGHT)
 

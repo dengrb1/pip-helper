@@ -8,6 +8,8 @@ root_1 = 'pip uninstall'
 ok = '安装完成'
 ok2 = '删除完成'
 uninstall = 'pip uninstall'
+ml = os.getcwd()
+file_error = '文件丢失，请重新安装'
 
 
 def open_exe(exe_name):

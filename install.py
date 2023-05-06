@@ -11,7 +11,7 @@ file_error = '文件丢失，请重新安装'
 
 
 
-def open_exe():
+def open_exe(exe_name):
     if os.path.exists(os.path.join(ml, f"{exe_name}.exe")):
         os.system(f"start {exe_name}.exe")
     else:
