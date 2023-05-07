@@ -7,6 +7,7 @@ root = Tk()
 ml = os.getcwd()
 file_error = '文件丢失！请重新安装'
 ok2 = "删除完成"
+uninstall = 'pip uninstall'
 
 
 def pyqt_remove():
@@ -22,12 +23,20 @@ def pygame_remove():
     os.system('pip uninstall pygame')
     messagebox.showinfo('pip uninstall', ok2)
     pass
+def Matplotlib():
+    os.system('pip uninstall Matplotlib')
+    messagebox.showinfo(uninstall, ok2)
+def Seaborn():
+    os.system('pip uninstall Seaborn')
+    messagebox.showinfo(uninstall, ok2)
 def fh():
     root.destroy()
 
 # button
 bt_pq5 = Button(root, text='pyqt5删除', command=pyqt_remove)
 bt_pygame = Button(root, text='pygame删除', command=pygame_remove)
+bt_matplotlib = Button(root, text='matplotlib删除', command=Matplotlib)
+bt_seaborn = Button(root, text='Seaborn删除', command=Seaborn)
 bt_wxpython = Button(root, text='wxpython删除', command=wxpython_remove)
 bt_fh = Button(root, text='返回', command=fh)
 
@@ -35,11 +44,13 @@ bt_fh = Button(root, text='返回', command=fh)
 Label(root, text='GUI删除').pack()
 bt_pq5.pack()
 bt_pygame.pack()
+bt_matplotlib.pack()
+bt_seaborn.pack()
 bt_wxpython.pack()
 bt_fh.pack()
 
 
 # mainloop
 root.title('GUI')
-root.geometry('200x200+400+500')
+root.geometry('200x230+400+500')
 root.mainloop()
