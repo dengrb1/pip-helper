@@ -23,9 +23,6 @@ def install():
 def delete():
     jc("delete")
 
-def gk():
-    messagebox.showerror('pip helper','因为程序问题，所以“关于”模块被删除!!!')
-
 def update():
     jc("update")
 
@@ -34,17 +31,20 @@ def exit_exe():
     root.destroy()
     pass
 
+def eyeryone():
+    messagebox.showerror('pip helper', '暂时无法使用，因为程序测试途中出现未知问题......')
+
 
 # Button and Label
 Label(root, text='pip_helper').pack()
 Button(root, text='安装模式', command=install).pack()
 Button(root, text='删除模式', command=delete).pack()
+Button(root, text='全部安装或删除', command=eyeryone).pack()
 Button(root, text='更新日志', command=update).pack()
-Button(root, text='关于', command=gk).pack()
 Button(root, text='退出', command=exit_exe).pack()
 
 
 # mainloop
 root.title('启动器')
-root.geometry('200x200+400+400')
+root.geometry('200x220+400+400')
 root.mainloop()
