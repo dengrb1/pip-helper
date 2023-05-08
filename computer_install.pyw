@@ -17,18 +17,23 @@ def tensorFlow():
 def pytorch():
     os.system('pip install pytorch')
     messagebox.showinfo(install, ok)
+def openai():
+    os.system('pip install openai')
+    messagebox.showinfo(install, ok)
 def fh():
     root.destroy()
 
 # Button
 bt_tensorFlow = Button(root, text='TensorFlow安装', command=tensorFlow)
 bt_pytorch = Button(root, text='pytorch安装', command=pytorch)
+bt_openai = Button(root, text='openai安装', command=openai)
 bt_fh = Button(root, text='返回', command=fh)
 
 # pack
 Label(root, text='机器学习类库安装').pack()
 bt_tensorFlow.pack()
 bt_pytorch.pack()
+bt_openai.pack()
 bt_fh.pack()
 
 

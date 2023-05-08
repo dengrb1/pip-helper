@@ -17,18 +17,23 @@ def TensorFlow():
 def pytorch():
     os.system('pip uninstall pytorch')
     messagebox.showinfo(uninstall, ok)
+def openai():
+    os.system('pip uninstall openai')
+    messagebox.showinfo(uninstall, ok)
 def fh():
     root.destroy()
 
 # Button
 bt_TensorFlow = Button(root, text='TensorFlow删除', command=TensorFlow)
 bt_pytorch = Button(root, text='pytorch删除', command=pytorch)
+bt_openai = Button(root, text='openai删除', command=openai)
 bt_fh = Button(root, text='返回', command=fh)
 
 # pack
 Label(root, text='机器学习类库删除').pack()
 bt_TensorFlow.pack()
 bt_pytorch.pack()
+bt_openai.pack()
 bt_fh.pack()
 
 
