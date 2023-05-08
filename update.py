@@ -11,7 +11,7 @@ root = Tk()
 def quit_exe():
     root.destroy()
 def update_now():
-    webbrowser.open("https://kgithub.com/dengrb1/chatgpt/releases/")
+    webbrowser.open("https://kgithub.com/dengrb1/pip-helper/releases/")
     messagebox.showinfo('update', '请选择最新版本并下载运行安装程序，然后就可以更新了！')
 
 # Label
