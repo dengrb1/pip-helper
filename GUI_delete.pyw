@@ -62,7 +62,7 @@ def fh():
     root.destroy()
 
 # button
-bt_pq5 = Button(root, text='pyqt5删除', command=pyqt_remove)
+bt_qt = Button(root, text='pyqt5删除', command=pyqt_remove)
 bt_pygame = Button(root, text='pygame删除', command=pygame_remove)
 bt_matplotlib = Button(root, text='matplotlib删除', command=Matplotlib)
 bt_seaborn = Button(root, text='Seaborn删除', command=Seaborn)
