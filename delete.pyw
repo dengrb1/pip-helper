@@ -81,5 +81,5 @@ canvas.pack(side="left", fill="both", expand=True)
 
 # mainloop
 root.title("delete")
-root.geometry("200x250+400+600")
+root.geometry("200x250+100+10")
 root.mainloop()

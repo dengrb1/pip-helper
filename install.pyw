@@ -78,5 +78,5 @@ pip_fh = Button(frame,text='返回', command=fh).pack()
 
 # mainloop
 root.title('安装')
-root.geometry('200x270+400+600')
+root.geometry('200x270+100+50')
 root.mainloop()

@@ -27,16 +27,16 @@ canvas.pack(side="left", fill="both", expand=True)
 
 
 
-def pyqt_remove():
+def pyqt():
     os.system('pip uninstall pyqt5')
     os.systen('pip uninstall PyQtWebEngine')
     messagebox.showinfo('pip uninstall', ok2)
     pass
-def wxpython_remove():
+def wxpython():
     os.system('pip uninstall wxpython')
     messagebox.showinfo('pip uninstall', ok2)
     pass
-def pygame_remove():
+def pygame():
     os.system('pip uninstall pygame')
     messagebox.showinfo('pip uninstall', ok2)
     pass
@@ -62,16 +62,16 @@ def fh():
     root.destroy()
 
 # button
-bt_qt = Button(root, text='pyqt5删除', command=pyqt_remove)
-bt_pygame = Button(root, text='pygame删除', command=pygame_remove)
-bt_matplotlib = Button(root, text='matplotlib删除', command=Matplotlib)
-bt_seaborn = Button(root, text='Seaborn删除', command=Seaborn)
+bt_qt = Button(root, text='pyqt5删除', command=pyqt)
+bt_pygame = Button(root, text='pygame删除', command=pygame)
+bt_wxpython = Button(frame, text='wxpython删除', command=wxpython)
 bt_kivy = Button(frame, text='kivy删除', command=kivy)
 bt_pyside = Button(frame, text='pyside6删除', command=pyside6)
 bt_flexx = Button(frame, text='flexx删除', command=flexx)
+bt_matplotlib = Button(frame, text='matplatlib删除', command=Matplotlib)
+bt_seaborn = Button(frame, text='seaborn删除', command=Seaborn)
 bt_pysimpleGUI = Button(frame, text='pysimpleGUI删除', command=pysimpleGUI)
-bt_wxpython = Button(root, text='wxpython删除', command=wxpython_remove)
-bt_fh = Button(root, text='返回', command=fh)
+bt_fh = Button(frame, text='返回', command=fh)
 
 # pack and Label
 Label(root, text='GUI删除').pack()
@@ -83,11 +83,11 @@ bt_matplotlib.pack()
 bt_seaborn.pack()
 bt_flexx.pack()
 bt_pysimpleGUI.pack()
-bt_wx.pack()
+bt_wxpython.pack()
 bt_fh.pack()
 
 
 # mainloop
 root.title('GUI')
-root.geometry('200x230+400+500')
+root.geometry('200x300+100+100')
 root.mainloop()

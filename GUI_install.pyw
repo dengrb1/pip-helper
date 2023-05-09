@@ -86,5 +86,5 @@ bt_fh.pack()
 
 # mainloop
 root.title("GUI")
-root.geometry('200x230+400+400')
+root.geometry('200x230+100+110')
 root.mainloop()
