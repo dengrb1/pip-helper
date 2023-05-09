@@ -66,7 +66,7 @@ bt_seaborn = Button(frame, text='Seaborn安装', command=Seaborn)
 bt_kivy = Button(frame, text='kivy安装', command=kivy)
 bt_pyside = Button(frame, text='pyside6安装', command=pyside6)
 bt_flexx = Button(frame, text='flexx安装', command=flexx)
-bt_pysimpleGUI = Button(frame, text='pysimpleGUI安装', commmand=pysimpleGUI)
+bt_pysimpleGUI = Button(frame, text='pysimpleGUI安装', command=pysimpleGUI)
 bt_wx = Button(frame, text='wxpython安装', command=wxpython)
 bt_fh = Button(frame, text='返回', command=fh)
 

@@ -9,6 +9,23 @@ file_error = '文件丢失！请重新安装'
 ok2 = "删除完成"
 uninstall = 'pip uninstall'
 
+# 创建滚动区域的Canvas对象
+canvas = Canvas(root, width=280, height=280, scrollregion=(0, 0, 500, 500))
+
+# 创建可滚动区域的Frame对象，并将其添加到Canvas中
+frame = Frame(canvas)
+frame.bind("<Configure>", lambda e: canvas.configure(scrollregion=canvas.bbox("all")))
+canvas.create_window((0, 0), window=frame, anchor="nw")
+
+# 创建Scrollbar对象，并将其绑定到Canvas上
+scrollbar = Scrollbar(root, orient="vertical", command=canvas.yview)
+canvas.configure(yscrollcommand=scrollbar.set)
+scrollbar.pack(side="right", fill="y")
+
+# 显示Canvas和Scrollbar
+canvas.pack(side="left", fill="both", expand=True)
+
+
 
 def pyqt_remove():
     os.system('pip uninstall pyqt5')
@@ -52,7 +69,7 @@ bt_seaborn = Button(root, text='Seaborn删除', command=Seaborn)
 bt_kivy = Button(frame, text='kivy删除', command=kivy)
 bt_pyside = Button(frame, text='pyside6删除', command=pyside6)
 bt_flexx = Button(frame, text='flexx删除', command=flexx)
-bt_pysimpleGUI = Button(frame, text='pysimpleGUI删除', commmand=pysimpleGUI)
+bt_pysimpleGUI = Button(frame, text='pysimpleGUI删除', command=pysimpleGUI)
 bt_wxpython = Button(root, text='wxpython删除', command=wxpython_remove)
 bt_fh = Button(root, text='返回', command=fh)
 
