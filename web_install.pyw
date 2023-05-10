@@ -2,21 +2,39 @@ from tkinter import *
 from tkinter import messagebox
 import os
 
-
+# 定义内容和创建主窗口
 root = Tk()
 ml = os.getcwd()
-ok = '安装完成!'
+ok = '安装成功'
+install = 'pip install'
 file_error = '文件丢失，请重新安装'
-install_1 = 'pip install'
 
 
+# 创建滚动区域的Canvas对象
+canvas = Canvas(root, width=280, height=280, scrollregion=(0, 0, 500, 500))
+
+# 创建可滚动区域的Frame对象，并将其添加到Canvas中
+frame = Frame(canvas)
+frame.bind("<Configure>", lambda e: canvas.configure(scrollregion=canvas.bbox("all")))
+canvas.create_window((0, 0), window=frame, anchor="nw")
+
+# 创建Scrollbar对象，并将其绑定到Canvas上
+scrollbar = Scrollbar(root, orient="vertical", command=canvas.yview)
+canvas.configure(yscrollcommand=scrollbar.set)
+scrollbar.pack(side="right", fill="y")
+
+# 显示Canvas和Scrollbar
+canvas.pack(side="left", fill="both", expand=True)
+
+
+# def
 def Requests():
     os.system('pip install Requests')
     messagebox.showinfo('pip install', ok)
     pass
 def django():
     os.system('pip install django')
-    messagebox.showinfo(install_1, ok)
+    messagebox.showinfo(install, ok)
     pass
 def open_exe(exe_name):
     if os.path.exists(os.path.join(ml, f"{exe_name}.exe")):
@@ -25,24 +43,46 @@ def open_exe(exe_name):
         messagebox.showerror('install', file_error)
         pass
     pass
+def fastAPI():
+    os.system('pip install fastapi')
+    messagebox.showinfo(install, ok)
+def sanic():
+    os.system('pip install sanic')
+    messagebox.showinfo(install, ok)
+def nameko():
+    os.system('pip install nameko')
+    messagebox.showinfo(install, ok)
+def pydantic():
+    os.system('pip install pydantic')
+    messagebox.showinfo(install, ok)
 def fh():
     root.destroy()
 
 
-# button
-bt_d = Button(root, text='django安装', command=django)
-bt_r = Button(root, text='Requests安装', command=Requests)
-bt_fh = Button(root, text='返回', command=fh)
+# Button
+bt_d = Button(frame, text='django安装', command=django)
+bt_r = Button(frame, text='Requests安装', command=Requests)
+bt_fastapi = Button(frame, text='fastAPI删除', command=fastAPI)
+bt_sanic = Button(frame, text='sanic删除', command=sanic)
+bt_nameko = Button(frame, text='namekos删除', command=nameko)
+bt_pydantic = Button(frame, text='pydantic删除', command=pydantic)
+bt_fh = Button(frame, text='返回', command=fh)
 
-
-# pack and Label
+# pack
 Label(root, text='web类安装').pack()
 bt_d.pack()
 bt_r.pack()
+bt_d.pack()
+bt_r.pack()
+bt_fastapi.pack()
+bt_sanic.pack()
+bt_nameko.pack()
+bt_pydantic.pack()
+bt_fh.pack()
 bt_fh.pack()
 
 
 # mainloop
 root.title('web')
-root.geometry('150x150')
+root.geometry('200x250+600+400')
 root.mainloop()
