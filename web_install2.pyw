@@ -6,7 +6,7 @@ import os
 root = Tk()
 ml = os.getcwd()
 ok = '安装成功'
-install_1 = 'pip install'
+install = 'pip install'
 file_error = '文件丢失，请重新安装'
 
 
@@ -34,7 +34,7 @@ def Requests():
     pass
 def django():
     os.system('pip install django')
-    messagebox.showinfo(install_1, ok)
+    messagebox.showinfo(install, ok)
     pass
 def open_exe(exe_name):
     if os.path.exists(os.path.join(ml, f"{exe_name}.exe")):
@@ -43,6 +43,18 @@ def open_exe(exe_name):
         messagebox.showerror('install', file_error)
         pass
     pass
+def fastAPI():
+    os.system('pip install fastapi')
+    messagebox.showinfo(install, ok)
+def sanic():
+    os.system('pip install sanic')
+    messagebox.showinfo(install, ok)
+def nameko():
+    os.system('pip install nameko')
+    messagebox.showinfo(install, ok)
+def pydantic():
+    os.system('pip install pydantic')
+    messagebox.showinfo(install, ok)
 def fh():
     root.destroy()
 
@@ -50,12 +62,23 @@ def fh():
 # Button
 bt_d = Button(frame, text='django安装', command=django)
 bt_r = Button(frame, text='Requests安装', command=Requests)
+bt_fastapi = Button(frame, text='fastAPI删除', command=fastAPI)
+bt_sanic = Button(frame, text='sanic删除', command=sanic)
+bt_nameko = Button(frame, text='namekos删除', command=nameko)
+bt_pydantic = Button(frame, text='pydantic删除', command=pydantic)
 bt_fh = Button(frame, text='返回', command=fh)
 
 # pack
 Label(root, text='web类安装').pack()
 bt_d.pack()
 bt_r.pack()
+bt_d.pack()
+bt_r.pack()
+bt_fastapi.pack()
+bt_sanic.pack()
+bt_nameko.pack()
+bt_pydantic.pack()
+bt_fh.pack()
 bt_fh.pack()
 
 

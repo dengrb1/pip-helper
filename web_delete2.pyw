@@ -70,7 +70,14 @@ bt_pydantic = Button(frame, text='pydantic删除', command=pydantic)
 bt_fh = Button(frame, text='pydantic删除', command=fh)
 
 # pack and Label
-Label(root, text='web类删除')
+Label(root, text='web类删除').pack()
+bt_d.pack()
+bt_r.pack()
+bt_fastapi.pack()
+bt_sanic.pack()
+bt_nameko.pack()
+bt_pydantic.pack()
+bt_fh.pack()
 
 
 # mainloop
