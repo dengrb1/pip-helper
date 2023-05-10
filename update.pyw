@@ -24,8 +24,9 @@ text = '''0.1.0 暂无日志
 1.2 加入更多可视化库，都在gui安装和删除类里面；修复一些BUG
 1.2.1 加入机器学习库——openai；修复BUG;一键安装所有库正在试验中......
 1.3 加入更多GUI库，比如：pyside6, kivy等等；修复一些BUG
+1.4 加入pip安装检测；加入更多web类库；修复一些BUG
 
-当前版本:1.3 (Not beta or demo)'''
+当前版本:1.4 (Not beta or demo)'''
 
 text_box = ScrolledText(root)
 text_box.pack(fill=BOTH, expand=1)
