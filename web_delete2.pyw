@@ -5,8 +5,8 @@ import os
 # 定义内容和创建主窗口
 root = Tk()
 ml = os.getcwd()
-ok = '安装成功'
-install = 'pip install'
+ok2 = '安装成功'
+uninstall = 'pip uninstall'
 file_error = '文件丢失，请重新安装'
 
 
@@ -35,14 +35,45 @@ def open_exe(exe_name):
     else:
         messagebox.showerror('delete', file_error)
     pass
-def Requests_remove():
+def Requests():
     os.system('pip uninstall Requests')
     messagebox.showinfo('pip uninstall', ok2)
     pass
-def django_remove():
+def django():
     os.system('pip uninstall django')
     messagebox.showinfo(uninstall, ok2)
     pass
+def fastAPI():
+    os.system('pip uninstall fastapi')
+    messagebox.showinfo(uninstall, ok2)
+def sanic():
+    os.system('pip uninstall sanic')
+    messagebox.showinfo(uninstall, ok2)
+def nameko():
+    os.system('pip uninstall nameko')
+    messagebox.showinfo(uninstall, ok2)
+def pydantic():
+    os.system('pip uninstall pydantic')
+    messagebox.showinfo(uninstall, ok2)
 def fh():
     root.destroy()
     pass
+
+
+# Button
+bt_r = Button(frame, text='requests删除', command=Requests)
+bt_d = Button(frame, text='django删除', command=django)
+bt_fastapi = Button(frame, text='fastAPI删除', command=fastAPI)
+bt_sanic = Button(frame, text='sanic删除', command=sanic)
+bt_nameko = Button(frame, text='namekos删除', command=nameko)
+bt_pydantic = Button(frame, text='pydantic删除', command=pydantic)
+bt_fh = Button(frame, text='pydantic删除', command=fh)
+
+# pack and Label
+Label(root, text='web类删除')
+
+
+# mainloop
+root.title('web')
+root.geometry('200x230+100+30')
+root.mainloop()
