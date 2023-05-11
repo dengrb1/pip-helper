@@ -20,8 +20,6 @@ def open_exe(exe_name):
 # try
 try:
     import pip
-    print('pip已经安装！！')
-    sleep(0.5)
     open_exe('client')
 except ImportError:
     print("请安装Pip或者python")
