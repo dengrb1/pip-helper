@@ -79,7 +79,6 @@ bt_sanic.pack()
 bt_nameko.pack()
 bt_pydantic.pack()
 bt_fh.pack()
-bt_fh.pack()
 
 
 # mainloop

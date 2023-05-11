@@ -65,15 +65,27 @@ def fh():
     root.destroy()
 
 # Button
-pip_gui = Button(frame, text='GUI类安装', command=gui_install).pack()
-pip_web = Button(frame, text='web类安装', command=web_install).pack()
-pip_computer = Button(frame, text='机器学习类库安装', command=computer_install).pack()
-pip_pyinstaller = Button(frame, text='pyinstall安装', command=pyinstaller).pack()
-pip_tqdm = Button(frame, text='tqdm安装', command=tqdm).pack()
-pip_nuitka = Button(frame, text='nuitka安装', command=nuitka).pack()
-pip_pywin32 = Button(frame, text='pywin32安装', command=pywin32).pack()
-pip_numpy = Button(frame, text='numpy安装', command=numpy).pack()
-pip_fh = Button(frame,text='返回', command=fh).pack()
+pip_gui = Button(frame, text='GUI类安装', command=gui_install)
+pip_web = Button(frame, text='web类安装', command=web_install)
+pip_computer = Button(frame, text='机器学习类库安装', command=computer_install)
+pip_pyinstaller = Button(frame, text='pyinstaller安装', command=pyinstaller)
+pip_tqdm = Button(frame, text='tqdm安装', command=tqdm)
+pip_nuitka = Button(frame, text='nuitka安装', command=nuitka)
+pip_pywin32 = Button(frame, text='pywin32安装', command=pywin32)
+pip_numpy = Button(frame, text='numpy安装', command=numpy)
+pip_fh = Button(frame,text='返回', command=fh)
+
+# pack and label
+Label(root, text='安装模式').pack()
+pip_gui.pack()
+pip_web.pack()
+pip_computer.pack()
+pip_pyinstaller.pack()
+pip_tqdm.pack()
+pip_nuitka.pack()
+pip_pywin32.pack()
+pip_numpy.pack()
+pip_fh.pack()
 
 
 # mainloop

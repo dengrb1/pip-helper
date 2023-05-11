@@ -64,7 +64,7 @@ def fh():
 # button
 bt_qt = Button(root, text='pyqt5删除', command=pyqt)
 bt_pygame = Button(root, text='pygame删除', command=pygame)
-bt_wxpython = Button(frame, text='wxpython删除', command=wxpython)
+bt_wx = Button(frame, text='wxpython删除', command=wxpython)
 bt_kivy = Button(frame, text='kivy删除', command=kivy)
 bt_pyside = Button(frame, text='pyside6删除', command=pyside6)
 bt_flexx = Button(frame, text='flexx删除', command=flexx)
@@ -83,7 +83,7 @@ bt_matplotlib.pack()
 bt_seaborn.pack()
 bt_flexx.pack()
 bt_pysimpleGUI.pack()
-bt_wxpython.pack()
+bt_wx.pack()
 bt_fh.pack()
 
 
