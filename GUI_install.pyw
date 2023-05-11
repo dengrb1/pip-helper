@@ -27,34 +27,34 @@ canvas.pack(side="left", fill="both", expand=True)
 
 
 def pyqt5():
-    os.system("pip install pyqt5")
-    os.systen('pip install PyQtWebEngine')
+    os.system("pip install pyqt5 -i https://mirrors.aliyun.com/pypi/simple/")
+    os.systen('pip install PyQtWebEngine -i https://mirrors.aliyun.com/pypi/simple/')
     messagebox.showinfo(install, ok)
 def wxpython():
-    os.system("pip install wxpython")
+    os.system("pip install wxpython -i https://mirrors.aliyun.com/pypi/simple/")
     messagebox.showinfo(install, ok)
 def pygame():
-    os.system("pip install pygame")
+    os.system("pip install pygame -i https://mirrors.aliyun.com/pypi/simple/")
     messagebox.showinfo(install, ok)
 def Matplotlib():
-    os.system('pip install Matplotlib')
+    os.system('pip install Matplotlib -i https://mirrors.aliyun.com/pypi/simple/')
     messagebox.showinfo(install, ok)
 def Seaborn():
-    os.system('pip install Seaborn')
+    os.system('pip install Seaborn -i https://mirrors.aliyun.com/pypi/simple/')
     messagebox.showinfo(install, ok)
 def fh():
     root.destroy()
 def kivy():
-    os.system('pip install kivy')
+    os.system('pip install kivy -i https://mirrors.aliyun.com/pypi/simple/')
     messagebox.showinfo(install, ok)
 def pysimpleGUI():
-    os.system('pip install pysimpleGUI')
+    os.system('pip install pysimpleGUI -i https://mirrors.aliyun.com/pypi/simple/')
     messagebox.showinfo(install, ok)
 def pyside6():
-    os.system('pip install pyside6')
+    os.system('pip install pyside6 -i https://mirrors.aliyun.com/pypi/simple/')
     messagebox.showinfo(install ,ok)
 def flexx():
-    os.system('pip install flexx')
+    os.system('pip install flexx -i https://mirrors.aliyun.com/pypi/simple/d')
     messagebox.showinfo(install, ok)
 
 

@@ -42,23 +42,23 @@ def web_install():
 def computer_install():
     open_exe('computer_install')
 def pyinstaller():
-    os.system('pip install pyinstaller')
+    os.system('pip install pyinstaller -i https://mirrors.aliyun.com/pypi/simple/')
     messagebox.showinfo('pip install', ok)
     pass
 def nuitka():
-    os.system('pip install nuitka')
+    os.system('pip install nuitka -i https://mirrors.aliyun.com/pypi/simple/')
     messagebox.showinfo('pip install', ok)
     pass
 def pywin32():
-    os.system('pip install pywin32')
+    os.system('pip install pywin32 -i https://mirrors.aliyun.com/pypi/simple/')
     messagebox.showinfo(install, ok)
     pass
 def tqdm():
-    os.system('pip install tqdm')
+    os.system('pip install tqdm -i https://mirrors.aliyun.com/pypi/simple/')
     messagebox.showinfo(install, ok)
     pass
 def numpy():
-    os.system('pip install numpy')
+    os.system('pip install numpy -i https://mirrors.aliyun.com/pypi/simple/')
     messagebox.showinfo(install, ok)
     pass
 def fh():

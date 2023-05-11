@@ -29,11 +29,11 @@ canvas.pack(side="left", fill="both", expand=True)
 
 # def
 def Requests():
-    os.system('pip install Requests')
+    os.system('pip install Requests -i https://mirrors.aliyun.com/pypi/simple/')
     messagebox.showinfo('pip install', ok)
     pass
 def django():
-    os.system('pip install django')
+    os.system('pip install django -i https://mirrors.aliyun.com/pypi/simple/')
     messagebox.showinfo(install, ok)
     pass
 def open_exe(exe_name):
@@ -44,16 +44,16 @@ def open_exe(exe_name):
         pass
     pass
 def fastAPI():
-    os.system('pip install fastapi')
+    os.system('pip install fastapi -i https://mirrors.aliyun.com/pypi/simple/')
     messagebox.showinfo(install, ok)
 def sanic():
-    os.system('pip install sanic')
+    os.system('pip install sanic -i https://mirrors.aliyun.com/pypi/simple/')
     messagebox.showinfo(install, ok)
 def nameko():
-    os.system('pip install nameko')
+    os.system('pip install nameko -i https://mirrors.aliyun.com/pypi/simple/')
     messagebox.showinfo(install, ok)
 def pydantic():
-    os.system('pip install pydantic')
+    os.system('pip install pydantic -i https://mirrors.aliyun.com/pypi/simple/')
     messagebox.showinfo(install, ok)
 def fh():
     root.destroy()

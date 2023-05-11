@@ -28,25 +28,25 @@ canvas.pack(side="left", fill="both", expand=True)
 
 # def
 def tensorFlow():
-    os.system('pip install TensorFlow')
+    os.system('pip install TensorFlow -i https://mirrors.aliyun.com/pypi/simple/')
     messagebox.showinfo(install, ok)
 def pytorch():
-    os.system('pip install pytorch')
+    os.system('pip install pytorch -i https://mirrors.aliyun.com/pypi/simple/')
     messagebox.showinfo(install, ok)
 def openai():
-    os.system('pip install openai')
+    os.system('pip install openai -i https://mirrors.aliyun.com/pypi/simple/')
     messagebox.showinfo(install, ok)
 def keras():
-    os.system('pip install keras')
+    os.system('pip install keras -i https://mirrors.aliyun.com/pypi/simple/')
     messagebox.showinfo(install, ok)
 def scikit_learn():
-    os.system('pip install scikit-learn')
+    os.system('pip install scikit-learn -i https://mirrors.aliyun.com/pypi/simple/')
     messagebox.showinfo(install, ok)
 def lightGBM():
-    os.system('pip install lightGBM')
+    os.system('pip install lightGBM -i https://mirrors.aliyun.com/pypi/simple/')
     messagebox.showinfo(install, ok)
 def CatBoost():
-    os.system('pip install CatBoost')
+    os.system('pip install CatBoost -i https://mirrors.aliyun.com/pypi/simple/')
     messagebox.shir
 def fh():
     root.destroy()
