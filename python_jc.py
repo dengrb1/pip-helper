@@ -73,7 +73,7 @@ def check_python_installation():
             sleep(1.5)
             sys.exit()
     else:
-        print('Python 3.x已安装')
+        print('自检正常！')
         open_exe('client')
 
 
