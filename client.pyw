@@ -44,7 +44,7 @@ Button(root, text='更新pip包管理工具', command=update_pip).pack()
 Button(root, text='更新日志', command=update).pack()
 Button(root, text='退出', command=exit_exe).pack()
 
-Label(root, text='version 1.6 @2023-2024 dengrb1')
+Label(root, text='version 1.6 @2023-2024 dengrb1').pack()
 
 
 # mainloop
