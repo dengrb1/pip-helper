@@ -6,8 +6,8 @@ import os
 root = Tk()
 ml = os.getcwd()
 file_error = '文件丢失，请重新安装'
-install = 'pip install'
-ok = '安装成功!'
+uninstall = 'pip uninstall'
+ok = '删除成功!'
 i = '-i https://mirrors.aliyun.com/pypi/simple/' 
 
 
@@ -36,38 +36,32 @@ def open_exe(exe_name):
         messagebox.showerror('pip helper', file_error)
     pass
 def Numpy():
-    os.system('pip install numpy -i https://mirrors.aliyun.com/pypi/simple/')
-    messagebox.showinfo(install, ok)
+    os.system('pip uninstall numpy')
+    messagebox.showinfo(uninstall, ok)
 def scipy():
-    os.system(f'pip install scipy {i}')
-    messagebox.showinfo(install, ok)
+    os.system(f'pip uninstall scipy')
+    messagebox.showinfo(uninstall, ok)
 def sympy():
-    os.system(f'pip install sympy {i}')
-    messagebox.showinfo(install, ok)
+    os.system(f'pip uninstall sympy')
+    messagebox.showinfo(uninstall, ok)
 def pandas():
-    os.system(f'pip install pandas {i}')
-    messagebox.showinfo(install, ok)
+    os.system(f'pip uninstall pandas')
+    messagebox.showinfo(uninstall, ok)
 def fh():
     root.destroy()
 
 
 # Button
-bt_n = Button(frame, text='Numpy安装', command=Numpy)
-bt_scipy = Button(frame, text='scipy安装', command=scipy)
-bt_sympy = Button(frame, text='sympy安装', command=sympy)
-bt_pandas = Button(frame, text='pandas安装', command=pandas)
+bt_n = Button(frame, text='Numpy删除', command=Numpy)
+bt_scipy = Button(frame, text='scipy删除', command=scipy)
+bt_sympy = Button(frame, text='sympy删除', command=sympy)
+bt_pandas = Button(frame, text='pandas删除', command=pandas)
 bt_fh = Button(frame, text='返回', command=fh)
 
 # pack and Label
-Label(root, text='计算类安装')
+Label(root, text='计算类删除')
 bt_fh.pack()
 bt_n.pack()
 bt_scipy.pack()
 bt_sympy.pack()
 bt_pandas.pack()
-
-
-# mainloop
-root.title('install')
-root.geometry('200x200+10+100')
-root.mainloop()
