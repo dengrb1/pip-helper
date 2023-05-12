@@ -18,7 +18,7 @@ def open_exe(exe_name):
         print(file_error)
         sleep(1)
     pass
-def check_internet(url='http://www.baidu.com/', timeout=5):
+def check_internet(url='http://www.baidu.com/', timeout=3):
     try:
         urllib.request.urlopen(url, timeout=timeout)
         return True
