@@ -43,26 +43,26 @@ def check_internet(url='http://www.baidu.com/', timeout=5):
         return False
 
 # try
-try:
-    import pip
-    check_internet()
-    open_exe('client')
-except ImportError:
-    print("请安装Pip或者python")
-    print('是否继续启动程序(Y.是，N.不是)?')
-    input_xz = str(input('>>>'))
-    if input_xz != None:
-        if input_xz == 'Y' or 'y':
-            open_exe('client')
-        elif input_xz == 'N' or 'n':
-            sys.exit()
-        else:
-            print('请输入英文字母!!')
-            sleep(1.5)
-            pass
-        pass
+def python():
+    if sys.version_info.major < 3:
+        check_internet()
     else:
-        print('错误：没有输入文字,默认退出！')
-        sleep(1.5)
-    webbrowser.open('https://python.org/downloads')
-    sys.exit()
+        print("error：没有安装pip包管理工具和python3.x")
+        sleep(1)
+        webbrowser.open('https://python.org/downloads/')
+        print("请安装Pip或者python")
+        print('是否继续启动程序(Y.是，N.不是)?')
+        input_xz = str(input('>>>'))
+        if input_xz != None:
+            if input_xz == 'Y' or 'y':
+                open_exe('client')
+            elif input_xz == 'N' or 'n':
+                sys.exit()
+            else:
+                print('请输入英文字母!!')
+                sleep(1.5)
+                pass
+        else:
+            print('错误：没有输入文字,默认退出！')
+            sleep(1.5)
+            sys.exit()
