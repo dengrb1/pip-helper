@@ -43,12 +43,21 @@ def check_internet(url='http://www.baidu.com/', timeout=5):
 
 def check_python_installation():
     if sys.version_info.major < 3:
-        check_internet()
-    else:
-        print(f'{ERROR_MSG}{strftime("%Y-%m-%d %H:%M:%S")}: 没有安装pip包管理工具和python3.x')
-        sleep(1)
-        webbrowser.open('https://python.org/downloads/')
-        print('请安装Pip或者python')
+        python_path = None
+        # 检查是否有 Python 安装目录
+        for path in os.environ['PATH'].split(os.pathsep):
+            python_exe = os.path.join(path, 'python.exe')
+            if os.path.isfile(python_exe):
+                python_path = os.path.dirname(python_exe)
+                break
+
+        if python_path:
+            print(f'{ERROR_MSG}{strftime("%Y-%m-%d %H:%M:%S")}: Python已安装，但版本太低，请安装 Python 3.x 版本')
+            webbrowser.open('https://python.org/downloads/')
+        else:
+            print(f'{ERROR_MSG}{strftime("%Y-%m-%d %H:%M:%S")}: Python未安装，请安装 Python 3.x 版本')
+            webbrowser.open('https://python.org/downloads/')
+    
         print('是否继续启动程序(Y.是，N.不是)?')
         input_xz = str(input('>>>'))
         if input_xz != None:
@@ -63,6 +72,9 @@ def check_python_installation():
             print('错误：没有输入文字,默认退出！')
             sleep(1.5)
             sys.exit()
+    else:
+        print('Python 3.x已安装')
+        open_exe('client')
 
 
 if __name__ == '__main__':
