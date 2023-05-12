@@ -29,7 +29,7 @@ text = '''当前版本:1.6 (Not beta or demo)
 1.4 加入pip安装检测；加入更多web类库；修复一些BUG
 1.5 加入更多机器学习库；修复一些BUG;修改pip安装检测代
 1.5.1 修改pip源，让下载速度变得更加快速！！
-1.6 加入更多处理数据库；修复一些BUG；加入WIFI检测；修改更新日志文本放置的位置；加入更新pip包管理工具!'''
+1.6 加入更多处理数据库；修复一些BUG；加入WIFI检测；修改更新日志文本放置的位置；加入更新pip包管理工具......'''
 
 text_box = ScrolledText(root)
 text_box.pack(fill=BOTH, expand=1)
