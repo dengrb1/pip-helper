@@ -41,6 +41,8 @@ def web_install():
     open_exe('web_install')
 def computer_install():
     open_exe('computer_install')
+def maths_install():
+    open_exe('maths_install')
 def pyinstaller():
     os.system('pip install pyinstaller -i https://mirrors.aliyun.com/pypi/simple/')
     messagebox.showinfo('pip install', ok)
@@ -64,6 +66,7 @@ def fh():
 pip_gui = Button(frame, text='GUI类安装', command=gui_install)
 pip_web = Button(frame, text='web类安装', command=web_install)
 pip_computer = Button(frame, text='机器学习类库安装', command=computer_install)
+pip_maths = Button(frame, text='maths类安装', command=maths_install)
 pip_pyinstaller = Button(frame, text='pyinstaller安装', command=pyinstaller)
 pip_tqdm = Button(frame, text='tqdm安装', command=tqdm)
 pip_nuitka = Button(frame, text='nuitka安装', command=nuitka)
@@ -72,14 +75,15 @@ pip_fh = Button(frame,text='返回', command=fh)
 
 # pack and label
 Label(root, text='安装模式').pack()
+pip_fh.pack()
 pip_gui.pack()
 pip_web.pack()
 pip_computer.pack()
+pip_maths.pack()
 pip_pyinstaller.pack()
 pip_tqdm.pack()
 pip_nuitka.pack()
 pip_pywin32.pack()
-pip_fh.pack()
 
 
 # mainloop
