@@ -17,10 +17,7 @@ def jc(exe_name):
         messagebox.showerror('system',file_error)
     pass
 def update_pip():
-    # 获取Python安装路径
-    python_path = sys.executable
-    # 使用subprocess模块调用pip进行更新
-    call([python_path, '-m', 'pip', 'install', '--upgrade', 'pip'])
+    os.system('pip install -i https://pypi.tuna.tsinghua.edu.cn/simple --upgrade pip')
     messagebox.showinfo('pip helper','更新pip包管理器成功!')
 def install():
     jc("install")
