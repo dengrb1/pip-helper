@@ -3,6 +3,7 @@ import os
 from time import *
 from time import sleep
 import urllib.request
+import webbrowser
 
 
 ml = os.getcwd()
@@ -24,7 +25,7 @@ def check_internet(url='http://www.baidu.com/', timeout=5):
     except Exception as e:
         print('WIFI连接不正常，请检测wifi连接后再试吧')
         sleep(5)
-        print('是否继续启动程序(Y.是，N.不是?')
+        print('是否继续启动程序(Y.是，N.不是)?')
         input_xz = str(input('>>>'))
         if input_xz != None:
             if input_xz == 'Y' or 'y':
@@ -48,7 +49,7 @@ try:
     open_exe('client')
 except ImportError:
     print("请安装Pip或者python")
-    print('是否继续启动程序(Y.是，N.不是?')
+    print('是否继续启动程序(Y.是，N.不是)?')
     input_xz = str(input('>>>'))
     if input_xz != None:
         if input_xz == 'Y' or 'y':
@@ -63,5 +64,5 @@ except ImportError:
     else:
         print('错误：没有输入文字,默认退出！')
         sleep(1.5)
-    sleep(4)
+    webbrowser.open('https://python.org/downloads')
     sys.exit()
