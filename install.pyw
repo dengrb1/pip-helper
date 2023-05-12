@@ -57,10 +57,6 @@ def tqdm():
     os.system('pip install tqdm -i https://mirrors.aliyun.com/pypi/simple/')
     messagebox.showinfo(install, ok)
     pass
-def numpy():
-    os.system('pip install numpy -i https://mirrors.aliyun.com/pypi/simple/')
-    messagebox.showinfo(install, ok)
-    pass
 def fh():
     root.destroy()
 
@@ -72,7 +68,6 @@ pip_pyinstaller = Button(frame, text='pyinstaller安装', command=pyinstaller)
 pip_tqdm = Button(frame, text='tqdm安装', command=tqdm)
 pip_nuitka = Button(frame, text='nuitka安装', command=nuitka)
 pip_pywin32 = Button(frame, text='pywin32安装', command=pywin32)
-pip_numpy = Button(frame, text='numpy安装', command=numpy)
 pip_fh = Button(frame,text='返回', command=fh)
 
 # pack and label
@@ -84,7 +79,6 @@ pip_pyinstaller.pack()
 pip_tqdm.pack()
 pip_nuitka.pack()
 pip_pywin32.pack()
-pip_numpy.pack()
 pip_fh.pack()
 
 

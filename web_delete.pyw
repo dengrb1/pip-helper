@@ -5,7 +5,7 @@ import os
 # 定义内容和创建主窗口
 root = Tk()
 ml = os.getcwd()
-ok2 = '安装成功'
+ok2 = '删除成功'
 uninstall = 'pip uninstall'
 file_error = '文件丢失，请重新安装'
 
