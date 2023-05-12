@@ -1,12 +1,12 @@
 from tkinter import *
 from tkinter import messagebox
-import platform
+import sys
+from subprocess import call
 import os
 
 
 root = Tk()
 ml = os.getcwd()
-System = platform.system()
 file_error = '文件丢失，请重新安装'
 
 
@@ -16,7 +16,12 @@ def jc(exe_name):
     else:
         messagebox.showerror('system',file_error)
     pass
-    
+def update_pip():
+    # 获取Python安装路径
+    python_path = sys.executable
+    # 使用subprocess模块调用pip进行更新
+    call([python_path, '-m', 'pip', 'install', '--upgrade', 'pip'])
+    messagebox.showinfo('pip helper','更新pip包管理器成功!')
 def install():
     jc("install")
 
