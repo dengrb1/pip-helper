@@ -21,6 +21,7 @@ def open_exe(exe_name):
 def check_internet(url='http://www.baidu.com/', timeout=5):
     try:
         urllib.request.urlopen(url, timeout=timeout)
+        open_exe('client')
         return True
     except Exception as e:
         print(f'{ERROR_MSG}{strftime("%Y-%m-%d %H:%M:%S")}: WIFI连接不正常，请检测wifi连接后再试吧')
@@ -41,7 +42,7 @@ def check_internet(url='http://www.baidu.com/', timeout=5):
         return False
 
 
-def check_python_installation():
+'''def check_python_installation():
     if sys.version_info.major < 3:
         python_path = None
         # 检查是否有 Python 安装目录
@@ -58,24 +59,50 @@ def check_python_installation():
             print(f'{ERROR_MSG}{strftime("%Y-%m-%d %H:%M:%S")}: Python未安装，请安装 Python 3.x 版本')
             webbrowser.open('https://python.org/downloads/')
     
-        print('是否继续启动程序(Y.是，N.不是)?')
-        input_xz = str(input('>>>'))
-        if input_xz != None:
-            if input_xz.lower() == 'y':
-                open_exe('client')
-            elif input_xz.lower() == 'n':
-                sys.exit()
+            print('是否继续启动程序(Y.是，N.不是)?')
+            input_xz = str(input('>>>'))
+            if input_xz != None:
+                if input_xz.lower() == 'y':
+                    open_exe('client')
+                elif input_xz.lower() == 'n':
+                    sys.exit()
+                else:
+                    print('请输入英文字母!!')
+                    sleep(1.5)
             else:
-                print('请输入英文字母!!')
+                print('错误：没有输入文字,默认退出！')
                 sleep(1.5)
-        else:
-            print('错误：没有输入文字,默认退出！')
-            sleep(1.5)
-            sys.exit()
+                sys.exit()
     else:
-        print('自检正常！')
-        open_exe('client')
+        python_path = None
+        for path in os.environ['PATH'].split(os.pathsep):
+            python_exe = os.path.join(path, 'python.exe')
+            if os.path.isfile(python_exe):
+                python_path = os.path.dirname(python_exe)
+                break
+
+        if python_path:
+            print('自检正常！')
+            open_exe('client')
+        else:
+            print(f'{ERROR_MSG}{strftime("%Y-%m-%d %H:%M:%S")}: Python未安装，请安装 Python 3.x 版本')
+            webbrowser.open('https://python.org/downloads/')
+    
+            print('是否继续启动程序(Y.是，N.不是)?')
+            input_xz = str(input('>>>'))
+            if input_xz != None:
+                if input_xz.lower() == 'y':
+                    open_exe('client')
+                elif input_xz.lower() == 'n':
+                    sys.exit()
+                else:
+                    print('请输入英文字母!!')
+                    sleep(1.5)
+            else:
+                print('错误：没有输入文字,默认退出！')
+                sleep(1.5)
+                sys.exit()'''
 
 
 if __name__ == '__main__':
-    check_python_installation()
+    check_internet()
