@@ -65,3 +65,9 @@ bt_n.pack()
 bt_scipy.pack()
 bt_sympy.pack()
 bt_pandas.pack()
+
+
+# mainloop
+root.title('删除')
+root.geometry('200x200+400+100')
+root.mainloop()
