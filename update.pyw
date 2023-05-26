@@ -13,10 +13,11 @@ ml = os.getcwd()
 def quit_exe():
     root.destroy()
 def update_now():
-    if os.path.exists(os.path.join(ml, "downloads_update_now.exe")):
+    '''if os.path.exists(os.path.join(ml, "downloads_update_now.exe")):
         os.startfile("downloads_update_now.exe")
     else:
-        messagebox.showerror('error','错误：文件不存在')
+        messagebox.showerror('error','错误：文件不存在')'''
+    messagebox.showerror('update', '在线更新模块正在更新,请以后再试吧')
 
 # Label
 update_now_bt = Button(root ,text='在线更新', command=update_now).pack(side=RIGHT)
