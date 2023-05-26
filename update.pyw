@@ -5,14 +5,18 @@ from tkinter import *
 from tkinter.scrolledtext import ScrolledText
 import webbrowser
 from tkinter import messagebox
+import os
 
 root = Tk()
+ml = os.getcwd()
 
 def quit_exe():
     root.destroy()
 def update_now():
-    webbrowser.open("https://kgithub.com/dengrb1/pip-helper/releases/")
-    messagebox.showinfo('update', '请选择最新版本并下载运行安装程序，然后就可以更新了！')
+    if os.path.exists(os.path.join(ml, "downloads_update_now.exe")):
+        os.startfile("downloads_update_now.exe")
+    else:
+        messagebox.showerror('error','错误：文件不存在')
 
 # Label
 update_now_bt = Button(root ,text='在线更新', command=update_now).pack(side=RIGHT)
