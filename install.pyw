@@ -8,6 +8,7 @@ ml = os.getcwd()
 ok = '安装成功'
 install = 'pip install'
 file_error = '文件丢失，请重新安装'
+i = '-i https://mirrors.aliyun.com/pypi/simple/'
 
 
 # 创建滚动区域的Canvas对象
@@ -59,6 +60,9 @@ def tqdm():
     os.system('pip install tqdm -i https://mirrors.aliyun.com/pypi/simple/')
     messagebox.showinfo(install, ok)
     pass
+def pygithub():
+    os.system(f'pip install pygithub {i}')
+    messagebox.showinfo(install,ok)
 def fh():
     root.destroy()
 
@@ -69,6 +73,7 @@ pip_computer = Button(frame, text='机器学习类库安装', command=computer_i
 pip_maths = Button(frame, text='maths类安装', command=maths_install)
 pip_pyinstaller = Button(frame, text='pyinstaller安装', command=pyinstaller)
 pip_tqdm = Button(frame, text='tqdm安装', command=tqdm)
+pip_pygithub = Button(frame, text='pygithub安装', command=pygithub)
 pip_nuitka = Button(frame, text='nuitka安装', command=nuitka)
 pip_pywin32 = Button(frame, text='pywin32安装', command=pywin32)
 pip_fh = Button(frame,text='返回', command=fh)
@@ -82,6 +87,7 @@ pip_computer.pack()
 pip_maths.pack()
 pip_pyinstaller.pack()
 pip_tqdm.pack()
+pip_pygithub.pack()
 pip_nuitka.pack()
 pip_pywin32.pack()
 

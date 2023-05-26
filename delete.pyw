@@ -7,7 +7,7 @@ root = Tk()
 ml = os.getcwd()
 file_error = '文件丢失，请重新安装'
 uninstall = 'pip uninstall'
-ok2 = '删除完成'
+ok = '删除完成'
 
 # 创建滚动区域的Canvas对象
 canvas = Canvas(root, width=280, height=280, scrollregion=(0, 0, 500, 500))
@@ -43,24 +43,27 @@ def maths_delete():
     open_exe('maths_delete')
 def pyinstaller_remove():
     os.system('pip uninstall pyinstaller')
-    messagebox.showinfo('pip uninstall', ok2)
+    messagebox.showinfo('pip uninstall', ok)
     pass
 def tqdm_remove():
     os.system('pip uninstall tqdm')
-    messagebox.showinfo('pip uninstall', ok2)
+    messagebox.showinfo('pip uninstall', ok)
     pass
 def nuitka_remove():
     os.system('pip uninstall nuitka')
-    messagebox.showinfo(uninstall, ok2)
+    messagebox.showinfo(uninstall, ok)
     pass
 def pywin32_remove():
     os.system('pip uninstall pywin32')
-    messagebox.showinfo(uninstall, ok2)
+    messagebox.showinfo(uninstall, ok)
     pass
 def numpy_remove():
     os.system('pip uninstall numpy')
-    messagebox.showinfo(uninstall, ok2)
+    messagebox.showinfo(uninstall, ok)
     pass
+def pygithub_remove():
+    os.system('pip uninstall pygithub')
+    messagebox.showinfo(uninstall, ok)
 def fh():
     root.destroy()
 
@@ -74,6 +77,7 @@ remove_computer = Button(frame, text='机器学习类删除', command=computer_d
 remove_maths = Button(frame, text='maths类删除', command=maths_delete).pack()
 remove_pyinstaller = Button(frame, text='pyinstaller删除', command=pyinstaller_remove).pack()
 remove_tqdm = Button(frame, text='tqdm删除', command=tqdm_remove).pack()
+remove_pygithub = Button(frame, text='pygithub删除', command=pygithub_remove).pack()
 remove_nuitka = Button(frame, text='nuitka删除', command=nuitka_remove).pack()
 remove_pywin32 = Button(frame, text='pywin32删除', command=pywin32_remove).pack()
 remove_numpy = Button(frame ,text="numpy删除", command=numpy_remove).pack()
