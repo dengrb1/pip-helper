@@ -81,6 +81,7 @@ bt_fh = Button(frame, text='返回', command=fh)
 
 # pack
 Label(root, text='机器学习类库安装').pack()
+bt_fh.pack()
 bt_tensorFlow.pack()
 bt_pytorch.pack()
 bt_keras.pack()
@@ -91,7 +92,7 @@ bt_XGBoost.pack()
 bt_pyttsx.pack()
 bt_pylatex.pack()
 bt_openai.pack()
-bt_fh.pack()
+
 
 
 # mainloop

@@ -81,6 +81,7 @@ bt_fh = Button(frame, text='返回', command=fh)
 
 # pack
 Label(root, text='机器学习类库删除').pack()
+bt_fh.pack()
 bt_TensorFlow.pack()
 bt_pytorch.pack()
 bt_keras.pack()
@@ -91,7 +92,7 @@ bt_pyttsx.pack()
 bt_pylatex.pack()
 bt_scikit_learn.pack()
 bt_openai.pack()
-bt_fh.pack()
+
 
 
 # mainloop

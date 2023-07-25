@@ -72,6 +72,7 @@ bt_fh = Button(frame, text='返回', command=fh)
 
 # pack and Label
 Label(root, text="GUI").pack()
+bt_fh.pack()
 bt_qt.pack()
 bt_pyside.pack()
 bt_kivy.pack()
@@ -81,7 +82,7 @@ bt_seaborn.pack()
 bt_flexx.pack()
 bt_pysimpleGUI.pack()
 bt_wx.pack()
-bt_fh.pack()
+
 
 
 # mainloop

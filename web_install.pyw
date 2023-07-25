@@ -70,6 +70,7 @@ bt_fh = Button(frame, text='返回', command=fh)
 
 # pack
 Label(root, text='web类安装').pack()
+bt_fh.pack()
 bt_d.pack()
 bt_r.pack()
 bt_d.pack()
@@ -78,7 +79,7 @@ bt_fastapi.pack()
 bt_sanic.pack()
 bt_nameko.pack()
 bt_pydantic.pack()
-bt_fh.pack()
+
 
 
 # mainloop

@@ -47,6 +47,15 @@ def sympy():
 def pandas():
     os.system(f'pip install pandas {i}')
     messagebox.showinfo(install, ok)
+def pyomo():
+    os.system(f'pip install pyomo {i}')
+    messagebox.showinfo(install ,ok)
+def gpy():
+    os.system(f'pip install gpy {i}')
+    messagebox.showinfo(install ,ok)
+def pydy():
+    os.system(f'pip install pydy {i}')
+    messagebox.showinfo(install ,ok)
 def fh():
     root.destroy()
 
@@ -56,6 +65,9 @@ bt_n = Button(frame, text='Numpy安装', command=Numpy)
 bt_scipy = Button(frame, text='scipy安装', command=scipy)
 bt_sympy = Button(frame, text='sympy安装', command=sympy)
 bt_pandas = Button(frame, text='pandas安装', command=pandas)
+bt_pyomo = Button(frame , text='pyomo安装', command=pyomo)
+bt_gpy = Button(frame ,text='gpy安装', command=gpy)
+bt_pydy = Button(frame , text='pydy安装', command=pydy)
 bt_fh = Button(frame, text='返回', command=fh)
 
 # pack and Label
@@ -65,6 +77,9 @@ bt_n.pack()
 bt_scipy.pack()
 bt_sympy.pack()
 bt_pandas.pack()
+bt_pyomo.pack()
+bt_gpy.pack()
+bt_pydy.pack()
 
 
 # mainloop
