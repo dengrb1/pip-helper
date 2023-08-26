@@ -36,10 +36,6 @@ def wxpython():
     os.system('pip uninstall wxpython')
     messagebox.showinfo('pip uninstall', ok2)
     pass
-def pygame():
-    os.system('pip uninstall pygame')
-    messagebox.showinfo('pip uninstall', ok2)
-    pass
 def Matplotlib():
     os.system('pip uninstall Matplotlib')
     messagebox.showinfo(uninstall, ok2)
@@ -62,8 +58,8 @@ def fh():
     root.destroy()
 
 # button
+bt_fh = Button(frame, text='返回', command=fh)
 bt_qt = Button(root, text='pyqt5删除', command=pyqt)
-bt_pygame = Button(root, text='pygame删除', command=pygame)
 bt_wx = Button(frame, text='wxpython删除', command=wxpython)
 bt_kivy = Button(frame, text='kivy删除', command=kivy)
 bt_pyside = Button(frame, text='pyside6删除', command=pyside6)
@@ -71,7 +67,7 @@ bt_flexx = Button(frame, text='flexx删除', command=flexx)
 bt_matplotlib = Button(frame, text='matplatlib删除', command=Matplotlib)
 bt_seaborn = Button(frame, text='seaborn删除', command=Seaborn)
 bt_pysimpleGUI = Button(frame, text='pysimpleGUI删除', command=pysimpleGUI)
-bt_fh = Button(frame, text='返回', command=fh)
+
 
 # pack and Label
 Label(root, text='GUI删除').pack()
@@ -79,7 +75,6 @@ bt_fh.pack()
 bt_qt.pack()
 bt_pyside.pack()
 bt_kivy.pack()
-bt_pygame.pack()
 bt_matplotlib.pack()
 bt_seaborn.pack()
 bt_flexx.pack()
