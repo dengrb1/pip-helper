@@ -61,6 +61,7 @@ def fh():
 
 
 # Button
+bt_fh = Button(frame, text='返回', command=fh)
 bt_n = Button(frame, text='Numpy删除', command=Numpy)
 bt_scipy = Button(frame, text='scipy删除', command=scipy)
 bt_sympy = Button(frame, text='sympy删除', command=sympy)
@@ -68,7 +69,7 @@ bt_pandas = Button(frame, text='pandas删除', command=pandas)
 bt_pyomo = Button(frame ,text='pyomo删除', command=pyomo)
 bt_gpy = Button(frame , text='gpy删除', command=gpy)
 bt_pydy = Button(frame ,text='pydy删除', command=pydy)
-bt_fh = Button(frame, text='返回', command=fh)
+
 
 # pack and Label
 Label(root, text='计算类删除')
