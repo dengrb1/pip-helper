@@ -61,6 +61,7 @@ def fh():
 
 
 # Button
+bt_fh = Button(frame, text='pydantic删除', command=fh)
 bt_r = Button(frame, text='requests删除', command=Requests)
 bt_d = Button(frame, text='django删除', command=django)
 bt_fastapi = Button(frame, text='fastAPI删除', command=fastAPI)

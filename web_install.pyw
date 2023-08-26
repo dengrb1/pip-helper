@@ -60,13 +60,14 @@ def fh():
 
 
 # Button
+bt_fh = Button(frame, text='返回', command=fh)
 bt_d = Button(frame, text='django安装', command=django)
 bt_r = Button(frame, text='Requests安装', command=Requests)
 bt_fastapi = Button(frame, text='fastAPI删除', command=fastAPI)
 bt_sanic = Button(frame, text='sanic删除', command=sanic)
 bt_nameko = Button(frame, text='namekos删除', command=nameko)
 bt_pydantic = Button(frame, text='pydantic删除', command=pydantic)
-bt_fh = Button(frame, text='返回', command=fh)
+
 
 # pack
 Label(root, text='web类安装').pack()
