@@ -61,6 +61,7 @@ def fh():
 
 
 # Button
+bt_fh = Button(frame, text='返回', command=fh)
 bt_n = Button(frame, text='Numpy安装', command=Numpy)
 bt_scipy = Button(frame, text='scipy安装', command=scipy)
 bt_sympy = Button(frame, text='sympy安装', command=sympy)
@@ -68,7 +69,7 @@ bt_pandas = Button(frame, text='pandas安装', command=pandas)
 bt_pyomo = Button(frame , text='pyomo安装', command=pyomo)
 bt_gpy = Button(frame ,text='gpy安装', command=gpy)
 bt_pydy = Button(frame , text='pydy安装', command=pydy)
-bt_fh = Button(frame, text='返回', command=fh)
+
 
 # pack and Label
 Label(root, text='计算类安装')
