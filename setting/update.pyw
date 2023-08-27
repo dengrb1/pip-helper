@@ -14,20 +14,26 @@ ml = os.getcwd()
 def quit_exe():
     root.destroy()
 def update_now():
+    '''
     if os.path.exists(os.path.join(ml, "downloads_update_now.exe")):
         subprocess.Popen("downloads_update_now.exe", shell=True)
     else:
         messagebox.showerror('error','错误：文件不存在')
-    messagebox.showerror('update', '在线更新模块正在更新,请以后再试吧')
+    '''
+    webbrowser.open('https://kgithub.com/dengrb1/pip-helper')
+def update_pip():
+    os.system('pip install -i https://pypi.tuna.tsinghua.edu.cn/simple --upgrade pip')
+    messagebox.showinfo('pip helper', '更新pip包管理器成功!')
 
 # Label
 update_now_bt = Button(root ,text='在线更新', command=update_now).pack(side=RIGHT)
 quit_bt = Button(root, text='返回', command=quit_exe).pack(side=RIGHT)
+pip_bt = Button(root, text='pip包更新', command=update_pip).pack(side=RIGHT)
 Label(root, text='更新日志').pack()
 text = '''当前版本:1.7 (Not beta or demo)
 
 
-1.7 加入pygithub库；“在线更新”模块改为正式版；加入更多的机器学习库
+1.7 加入pygithub库；加入更多的机器学习库,修复一些BUG
 
 1.6 加入更多处理数据库；修复一些BUG；加入WIFI检测；修改更新日志文本放置的位置；加入更新pip包管理工具......
 
@@ -55,5 +61,5 @@ text_box.configure(state='disabled')
 
 # mainloop
 root.title('更新日志')
-root.geometry('355x250+400+400')
+root.geometry('400x300+400+400')
 root.mainloop()

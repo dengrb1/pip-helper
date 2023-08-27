@@ -17,11 +17,6 @@ def jc(exe_name):
         messagebox.showerror('system', file_error)
 
 
-def update_pip():
-    os.system('pip install -i https://pypi.tuna.tsinghua.edu.cn/simple --upgrade pip')
-    messagebox.showinfo('pip helper', '更新pip包管理器成功!')
-
-
 def install():
     jc("install")
 
@@ -49,7 +44,6 @@ def eyeryone():
 Label(root, text='pip_helper').pack()
 Button(root, text='安装模式', command=install).pack()
 Button(root, text='删除模式', command=delete).pack()
-Button(root, text='更新pip包管理工具', command=update_pip).pack()
 Button(root, text='更新日志', command=update).pack()
 Button(root, text='退出', command=exit_exe).pack()
 
