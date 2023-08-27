@@ -29,12 +29,6 @@ canvas.pack(side="left", fill="both", expand=True)
 
 
 # def
-def open_exe(exe_name):
-    if os.path.exists(os.path.join(ml, f"{exe_name}.exe")):
-        os.system(f"start {exe_name}.exe")
-    else:
-        messagebox.showerror('pip helper', file_error)
-    pass
 def Numpy():
     os.system('pip install numpy -i https://mirrors.aliyun.com/pypi/simple/')
     messagebox.showinfo(install, ok)
