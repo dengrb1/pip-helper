@@ -52,7 +52,8 @@ def arcade():
     os.system(f'pip install arcade {i}')
     messagebox.showinfo(install, ok)
 def fh():
-    sys.exit()
+    root.destroy()
+    exit()
     pass
 
 
@@ -68,7 +69,7 @@ bt_arcade = Button(frame, text='arcade安装', command=arcade)
 bt_pyopengl = Button(frame, text='pyopenGL安装', command=pyopengl)
 
 # pack
-Label(root, text='游戏库安装')
+Label(root, text='游戏库安装').pack()
 bt_fh.pack()
 bt_pygame.pack()
 bt_pyopengl.pack()
