@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
 import os
+import subprocess
 
 # 定义内容和创建主窗口
 root = Tk()
@@ -36,13 +37,7 @@ def django():
     os.system('pip install django -i https://mirrors.aliyun.com/pypi/simple/')
     messagebox.showinfo(install, ok)
     pass
-def open_exe(exe_name):
-    if os.path.exists(os.path.join(ml, f"{exe_name}.exe")):
-        os.system(f"start {exe_name}.exe")
-    else:
-        messagebox.showerror('install', file_error)
-        pass
-    pass
+
 def fastAPI():
     os.system('pip install fastapi -i https://mirrors.aliyun.com/pypi/simple/')
     messagebox.showinfo(install, ok)

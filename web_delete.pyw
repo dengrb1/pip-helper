@@ -29,12 +29,6 @@ canvas.pack(side="left", fill="both", expand=True)
 
 
 # def
-def open_exe(exe_name):
-    if os.path.exists(os.path.join(ml, f"{exe_name}.exe")):
-        os.system(f"start {exe_name}.exe")
-    else:
-        messagebox.showerror('delete', file_error)
-    pass
 def Requests():
     os.system('pip uninstall Requests')
     messagebox.showinfo('pip uninstall', ok2)
