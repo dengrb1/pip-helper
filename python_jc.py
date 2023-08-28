@@ -107,3 +107,4 @@ def check_internet(url='http://www.baidu.com/', timeout=5):
 
 if __name__ == '__main__':
     check_internet()
+    sys.exit()
