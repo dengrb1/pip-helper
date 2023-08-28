@@ -6,7 +6,6 @@ import os
 
 root = Tk()
 ml = os.getcwd()
-setting_ml = f"{ml}\setting\\"
 file_error = '文件丢失，请重新安装'
 
 
@@ -26,10 +25,7 @@ def delete():
 
 
 def update():
-    if os.path.exists(os.path.join(setting_ml, "update.pyw")):
-        subprocess.Popen(f"{setting_ml}update.pyw", shell=True)
-    else:
-        messagebox.showerror('system', file_error)
+    jc("update")
 
 
 def exit_exe():

@@ -42,6 +42,8 @@ def computer_delete():
     open_exe('computer_delete')
 def maths_delete():
     open_exe('maths_delete')
+def game_delete():
+    open_exe("game_delete")
 def pyinstaller_remove():
     os.system('pip uninstall pyinstaller')
     messagebox.showinfo('pip uninstall', ok)
