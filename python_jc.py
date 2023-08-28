@@ -3,6 +3,7 @@ import os
 import urllib.request
 import webbrowser
 from time import sleep, strftime
+import subprocess
 
 
 ml = os.getcwd()
@@ -12,7 +13,7 @@ ERROR_MSG = '错误：'
 
 def open_exe(exe_name):
     if os.path.exists(os.path.join(ml, f"{exe_name}.exe")):
-        os.system(f"start {exe_name}.exe")
+        subprocess.Popen(f"{exe_name}.exe", shell=True)
     else:
         print(file_error)
         sleep(1)

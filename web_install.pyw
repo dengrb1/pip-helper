@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
 import os
+import subprocess
 
 # 定义内容和创建主窗口
 root = Tk()
@@ -36,13 +37,7 @@ def django():
     os.system('pip install django -i https://mirrors.aliyun.com/pypi/simple/')
     messagebox.showinfo(install, ok)
     pass
-def open_exe(exe_name):
-    if os.path.exists(os.path.join(ml, f"{exe_name}.exe")):
-        os.system(f"start {exe_name}.exe")
-    else:
-        messagebox.showerror('install', file_error)
-        pass
-    pass
+
 def fastAPI():
     os.system('pip install fastapi -i https://mirrors.aliyun.com/pypi/simple/')
     messagebox.showinfo(install, ok)
@@ -60,16 +55,18 @@ def fh():
 
 
 # Button
+bt_fh = Button(frame, text='返回', command=fh)
 bt_d = Button(frame, text='django安装', command=django)
 bt_r = Button(frame, text='Requests安装', command=Requests)
 bt_fastapi = Button(frame, text='fastAPI删除', command=fastAPI)
 bt_sanic = Button(frame, text='sanic删除', command=sanic)
 bt_nameko = Button(frame, text='namekos删除', command=nameko)
 bt_pydantic = Button(frame, text='pydantic删除', command=pydantic)
-bt_fh = Button(frame, text='返回', command=fh)
+
 
 # pack
 Label(root, text='web类安装').pack()
+bt_fh.pack()
 bt_d.pack()
 bt_r.pack()
 bt_d.pack()
@@ -78,7 +75,7 @@ bt_fastapi.pack()
 bt_sanic.pack()
 bt_nameko.pack()
 bt_pydantic.pack()
-bt_fh.pack()
+
 
 
 # mainloop

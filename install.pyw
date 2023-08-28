@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
 import os
+import subprocess
 
 # 定义内容和创建主窗口
 root = Tk()
@@ -31,7 +32,7 @@ canvas.pack(side="left", fill="both", expand=True)
 # def
 def open_exe(exe_name):
     if os.path.exists(os.path.join(ml, f"{exe_name}.exe")):
-        os.system(f"start {exe_name}.exe")
+        subprocess.Popen(f"{exe_name}.exe", shell=True)
     else:
         messagebox.showerror('install', file_error)
         pass
@@ -44,6 +45,8 @@ def computer_install():
     open_exe('computer_install')
 def maths_install():
     open_exe('maths_install')
+def game_install():
+    open_exe("game_install")
 def pyinstaller():
     os.system('pip install pyinstaller -i https://mirrors.aliyun.com/pypi/simple/')
     messagebox.showinfo('pip install', ok)
@@ -71,6 +74,7 @@ pip_gui = Button(frame, text='GUI类安装', command=gui_install)
 pip_web = Button(frame, text='web类安装', command=web_install)
 pip_computer = Button(frame, text='机器学习类库安装', command=computer_install)
 pip_maths = Button(frame, text='maths类安装', command=maths_install)
+pip_game = Button(frame, text='game类安装', command=game_install)
 pip_pyinstaller = Button(frame, text='pyinstaller安装', command=pyinstaller)
 pip_tqdm = Button(frame, text='tqdm安装', command=tqdm)
 pip_pygithub = Button(frame, text='pygithub安装', command=pygithub)
@@ -79,12 +83,14 @@ pip_pywin32 = Button(frame, text='pywin32安装', command=pywin32)
 pip_fh = Button(frame,text='返回', command=fh)
 
 # pack and label
-Label(root, text='安装模式').pack()
+Label(frame, text='安装列表').pack()
 pip_fh.pack()
 pip_gui.pack()
 pip_web.pack()
 pip_computer.pack()
 pip_maths.pack()
+pip_game.pack()
+Label(frame ,text='').pack()
 pip_pyinstaller.pack()
 pip_tqdm.pack()
 pip_pygithub.pack()

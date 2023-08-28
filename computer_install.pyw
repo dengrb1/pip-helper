@@ -9,6 +9,7 @@ file_error = '文件丢失，请重新安装'
 ok = '安装完成'
 install = 'pip install'
 i = '-i https://mirrors.aliyun.com/pypi/simple/'
+i2 = '安装'
 
 # 创建滚动区域的Canvas对象
 canvas = Canvas(root, width=280, height=280, scrollregion=(0, 0, 500, 500))
@@ -58,6 +59,9 @@ def pyttsx():
 def pylatex():
     os.system(f'pip install pylatex {i}')
     messagebox.showinfo(install , ok)
+def XGBoost():
+    os.system(f'pip install XGBoost {i}')
+    messagebox.showinfo(install ,ok)
 def fh():
     root.destroy()
 
@@ -68,20 +72,27 @@ bt_pytorch = Button(frame, text='pytorch安装', command=pytorch)
 bt_keras = Button(frame, text='keras安装', command=keras)
 bt_lightGBM = Button(frame, text='lightGBM安装', command=lightGBM)
 bt_pandas = Button(frame, text='pandas安装', command=pandas)
+bt_pyttsx = Button(frame, text='pyttsx安装', command=pyttsx)
+bt_pylatex = Button(frame, text='pylatex安装', command=pylatex)
 bt_scikit_learn = Button(frame, text='scikit-learn安装', command=scikit_learn)
 bt_openai = Button(frame, text='openai安装', command=openai)
+bt_XGBoost = Button(frame ,text='XGBoost安装', command=XGBoost)
 bt_fh = Button(frame, text='返回', command=fh)
 
 # pack
 Label(root, text='机器学习类库安装').pack()
+bt_fh.pack()
 bt_tensorFlow.pack()
 bt_pytorch.pack()
 bt_keras.pack()
 bt_lightGBM.pack()
 bt_pandas.pack()
 bt_scikit_learn.pack()
+bt_XGBoost.pack()
+bt_pyttsx.pack()
+bt_pylatex.pack()
 bt_openai.pack()
-bt_fh.pack()
+
 
 
 # mainloop

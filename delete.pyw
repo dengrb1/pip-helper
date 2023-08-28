@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
 import os
+import subprocess
 
 # 创建主窗口
 root = Tk()
@@ -26,7 +27,7 @@ scrollbar.pack(side="right", fill="y")
 # def frame
 def open_exe(exe_name):
     if os.path.exists(os.path.join(ml, f"{exe_name}.exe")):
-        os.system(f"start {exe_name}.exe")
+        subprocess.Popen(f"{exe_name}.exe", shell=True)
     else:
         messagebox.showerror('install', file_error)
         pass
@@ -41,6 +42,8 @@ def computer_delete():
     open_exe('computer_delete')
 def maths_delete():
     open_exe('maths_delete')
+def game_delete():
+    open_exe("game_delete")
 def pyinstaller_remove():
     os.system('pip uninstall pyinstaller')
     messagebox.showinfo('pip uninstall', ok)

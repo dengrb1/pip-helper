@@ -29,12 +29,6 @@ canvas.pack(side="left", fill="both", expand=True)
 
 
 # def
-def open_exe(exe_name):
-    if os.path.exists(os.path.join(ml, f"{exe_name}.exe")):
-        os.system(f"start {exe_name}.exe")
-    else:
-        messagebox.showerror('delete', file_error)
-    pass
 def Requests():
     os.system('pip uninstall Requests')
     messagebox.showinfo('pip uninstall', ok2)
@@ -61,6 +55,7 @@ def fh():
 
 
 # Button
+bt_fh = Button(frame, text='pydantic删除', command=fh)
 bt_r = Button(frame, text='requests删除', command=Requests)
 bt_d = Button(frame, text='django删除', command=django)
 bt_fastapi = Button(frame, text='fastAPI删除', command=fastAPI)
@@ -71,13 +66,14 @@ bt_fh = Button(frame, text='pydantic删除', command=fh)
 
 # pack and Label
 Label(root, text='web类删除').pack()
+bt_fh.pack()
 bt_d.pack()
 bt_r.pack()
 bt_fastapi.pack()
 bt_sanic.pack()
 bt_nameko.pack()
 bt_pydantic.pack()
-bt_fh.pack()
+
 
 
 # mainloop

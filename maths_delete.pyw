@@ -29,14 +29,8 @@ canvas.pack(side="left", fill="both", expand=True)
 
 
 # def
-def open_exe(exe_name):
-    if os.path.exists(os.path.join(ml, f"{exe_name}.exe")):
-        os.system(f"start {exe_name}.exe")
-    else:
-        messagebox.showerror('pip helper', file_error)
-    pass
 def Numpy():
-    os.system('pip uninstall numpy')
+    os.system(f'pip uninstall numpy')
     messagebox.showinfo(uninstall, ok)
 def scipy():
     os.system(f'pip uninstall scipy')
@@ -47,16 +41,29 @@ def sympy():
 def pandas():
     os.system(f'pip uninstall pandas')
     messagebox.showinfo(uninstall, ok)
+def pyomo():
+    os.system(f'pip uninstall pyomo')
+    messagebox.showinfo(uninstall, ok)
+def gpy():
+    os.system(f'pip uninstall gpy')
+    messagebox.showinfo(uninstall ,ok)
+def pydy():
+    os.system(f'pip uninstall pydy')
+    messagebox.showinfo(uninstall ,ok)
 def fh():
     root.destroy()
 
 
 # Button
+bt_fh = Button(frame, text='返回', command=fh)
 bt_n = Button(frame, text='Numpy删除', command=Numpy)
 bt_scipy = Button(frame, text='scipy删除', command=scipy)
 bt_sympy = Button(frame, text='sympy删除', command=sympy)
 bt_pandas = Button(frame, text='pandas删除', command=pandas)
-bt_fh = Button(frame, text='返回', command=fh)
+bt_pyomo = Button(frame ,text='pyomo删除', command=pyomo)
+bt_gpy = Button(frame , text='gpy删除', command=gpy)
+bt_pydy = Button(frame ,text='pydy删除', command=pydy)
+
 
 # pack and Label
 Label(root, text='计算类删除')
@@ -65,6 +72,9 @@ bt_n.pack()
 bt_scipy.pack()
 bt_sympy.pack()
 bt_pandas.pack()
+bt_pyomo.pack()
+bt_gpy.pack()
+bt_pydy.pack()
 
 
 # mainloop

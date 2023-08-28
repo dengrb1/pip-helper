@@ -8,6 +8,7 @@ ml = os.getcwd()
 file_error = '文件丢失，请重新安装'
 uninstall = 'pip uninstall'
 ok = '删除完成'
+u = '删除'
 
 
 # 创建滚动区域的Canvas对象
@@ -53,6 +54,15 @@ def CatBoost():
 def XGBoost():
     os.system('pip uninstall XGBoost')
     messagebox.showinfo(uninstall, ok)
+def pandas():
+    os.system(f'pip uninstall pandas')
+    messagebox.showinfo(uninstall, ok)
+def pyttsx():
+    os.system('pip uninstall pyttsx')
+    messagebox.showinfo(uninstall, ok)
+def pylatex():
+    os.system('pip uninstall pylatex')
+    messagebox.showinfo(uninstall ,ok)
 def fh():
     root.destroy()
 
@@ -63,22 +73,29 @@ bt_keras = Button(frame, text='keras安装', command=keras)
 bt_lightGBM = Button(frame, text='lightGBM安装', command=lightGBM)
 bt_scikit_learn = Button(frame, text='scikit-learn安装', command=scikit_learn)
 bt_XGBoost = Button(frame, text='XGBoost删除', command=XGBoost)
+bt_pandas = Button(frame ,text=f'pandas{u}', command=pandas)
+bt_pyttsx = Button(frame , text=f'pyttsx{u}', command=pyttsx)
+bt_pylatex = Button(frame , text=f'pylatex{u}', command=pylatex)
 bt_openai = Button(frame, text='openai删除', command=openai)
 bt_fh = Button(frame, text='返回', command=fh)
 
 # pack
 Label(root, text='机器学习类库删除').pack()
+bt_fh.pack()
 bt_TensorFlow.pack()
 bt_pytorch.pack()
 bt_keras.pack()
 bt_lightGBM.pack()
 bt_XGBoost.pack()
+bt_pandas.pack()
+bt_pyttsx.pack()
+bt_pylatex.pack()
 bt_scikit_learn.pack()
 bt_openai.pack()
-bt_fh.pack()
+
 
 
 # mainloop
 root.title('delete')
-root.geometry('150x150+400+650')
+root.geometry('200x220+400+650')
 root.mainloop()
