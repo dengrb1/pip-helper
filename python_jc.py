@@ -110,4 +110,5 @@ def check_internet(url='http://www.baidu.com/', timeout=5):
 
 if __name__ == '__main__':
     check_internet()
-    sys.exit()
+    sleep(1)
+    os.system("taskill -f -t -im python_jc.exe")
