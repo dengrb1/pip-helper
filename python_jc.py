@@ -23,7 +23,6 @@ def check_internet(url='http://www.baidu.com/', timeout=5):
     try:
         urllib.request.urlopen(url, timeout=timeout)
         open_exe('client')
-        os.system("taskkill -f -t -im python_jc.exe")
         return True
     except Exception as e:
         print(f'{ERROR_MSG}{strftime("%Y-%m-%d %H:%M:%S")}: WIFI连接不正常，请检测wifi连接后再试吧')
@@ -44,10 +43,10 @@ def check_internet(url='http://www.baidu.com/', timeout=5):
         return False
 
 
-check_internet()
 
-sleep(0.4)
-sys.exit()
+
+
+
 
 
 '''def check_python_installation():
@@ -110,3 +109,8 @@ sys.exit()
                 print('错误：没有输入文字,默认退出！')
                 sleep(1.5)
                 sys.exit()'''
+
+if __name__ == "__main__":
+    check_internet()
+    os.system("taskkill -f -im python_jc.exe")
+    sys.exit()
