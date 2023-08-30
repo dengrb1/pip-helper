@@ -41,6 +41,9 @@ def check_internet(url='http://www.baidu.com/', timeout=5):
             print('错误：没有输入文字')
             sleep(1.5)
         return False
+    sleep(1.8)
+    sys.exit()
+    pass
 
 
 '''def check_python_installation():
