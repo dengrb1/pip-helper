@@ -43,7 +43,7 @@ Button(root, text='删除模式', command=delete).pack()
 Button(root, text='更新日志', command=update).pack()
 Button(root, text='退出', command=exit_exe).pack()
 
-Label(root, text='version 1.6 @2023-2024 dengrb1').pack()
+Label(root, text='version 1.7 @2023-2024 dengrb1').pack()
 
 # mainloop
 root.title('选择')
