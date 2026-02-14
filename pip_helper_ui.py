@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import subprocess
 import sys
+import runpy
 from dataclasses import dataclass
 from pathlib import Path
 import tkinter as tk
@@ -72,11 +73,28 @@ def make_pip_action(action: str, packages: Sequence[str], use_mirror: bool = Tru
     return handler
 
 
+def _run_script_fallback(exe_name: str) -> bool:
+    candidates = [BASE_DIR / f"{exe_name}.pyw", BASE_DIR / f"{exe_name}.py"]
+    meipass = getattr(sys, "_MEIPASS", None)
+    if meipass:
+        base = Path(meipass)
+        candidates.extend([base / f"{exe_name}.pyw", base / f"{exe_name}.py"])
+
+    for script_path in candidates:
+        if script_path.exists():
+            runpy.run_path(str(script_path), run_name="__main__")
+            return True
+    return False
+
+
 def open_exe(exe_name: str) -> bool:
     exe_path = BASE_DIR / f"{exe_name}.exe"
-    if not exe_path.exists():
-        messagebox.showerror("启动失败", "文件丢失，请重新安装")
-        return False
+    if exe_path.exists():
+        subprocess.Popen(str(exe_path), shell=True)
+        return True
 
-    subprocess.Popen(str(exe_path), shell=True)
-    return True
+    if _run_script_fallback(exe_name):
+        return True
+
+    messagebox.showerror("启动失败", "文件丢失，请重新安装")
+    return False

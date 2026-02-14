@@ -9,6 +9,7 @@ from typing import List, Optional, Tuple
 from time import strftime
 import subprocess
 import shutil
+import runpy
 import tkinter as tk
 from tkinter import messagebox
 
@@ -46,10 +47,28 @@ def show_error(title: str, message: str) -> None:
     root.destroy()
 
 
+def _run_script_fallback(exe_name: str) -> bool:
+    candidates = [BASE_DIR / f"{exe_name}.pyw", BASE_DIR / f"{exe_name}.py"]
+    meipass = getattr(sys, "_MEIPASS", None)
+    if meipass:
+        base = Path(meipass)
+        candidates.extend([base / f"{exe_name}.pyw", base / f"{exe_name}.py"])
+
+    for script_path in candidates:
+        if script_path.exists():
+            runpy.run_path(str(script_path), run_name="__main__")
+            return True
+
+    return False
+
+
 def open_exe(exe_name: str) -> bool:
     exe_path = BASE_DIR / f"{exe_name}.exe"
     if exe_path.exists():
         subprocess.Popen(str(exe_path), shell=True)
+        return True
+
+    if _run_script_fallback(exe_name):
         return True
 
     show_error("启动失败", FILE_ERROR)
