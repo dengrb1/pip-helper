@@ -1,20 +1,19 @@
-import os
-from time import sleep
+import subprocess
+import time
 
 
-def run():
-    for i in range(4):
-        os.system('start powershell')
-        pass
-    pass
+def run(count: int = 4) -> None:
+    for _ in range(count):
+        subprocess.Popen(["powershell"], shell=True)
 
 
-# mainloop
-print('正在启动')
-sleep(0.666)
-print('Starting up')
-sleep(0.22222)
-run()
+def main() -> None:
+    print("正在启动")
+    time.sleep(0.66)
+    print("Starting up")
+    time.sleep(0.22)
+    run()
 
-# exit
-exit()
+
+if __name__ == "__main__":
+    main()
