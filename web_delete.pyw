@@ -1,82 +1,22 @@
-from tkinter import *
-from tkinter import messagebox
-import os
+from pip_helper_ui import ScrollWindow, make_pip_action
 
-# 定义内容和创建主窗口
-root = Tk()
-ml = os.getcwd()
-ok2 = '删除成功'
-uninstall = 'pip uninstall'
-file_error = '文件丢失，请重新安装'
-
-
-# 创建滚动区域的Canvas对象
-canvas = Canvas(root, width=280, height=280, scrollregion=(0, 0, 500, 500))
-
-# 创建可滚动区域的Frame对象，并将其添加到Canvas中
-frame = Frame(canvas)
-frame.bind("<Configure>", lambda e: canvas.configure(scrollregion=canvas.bbox("all")))
-canvas.create_window((0, 0), window=frame, anchor="nw")
-
-# 创建Scrollbar对象，并将其绑定到Canvas上
-scrollbar = Scrollbar(root, orient="vertical", command=canvas.yview)
-canvas.configure(yscrollcommand=scrollbar.set)
-scrollbar.pack(side="right", fill="y")
-
-# 显示Canvas和Scrollbar
-canvas.pack(side="left", fill="both", expand=True)
+ACTIONS = [
+    ("Requests删除", ["requests"]),
+    ("django删除", ["django"]),
+    ("fastAPI删除", ["fastapi"]),
+    ("sanic删除", ["sanic"]),
+    ("nameko删除", ["nameko"]),
+    ("pydantic删除", ["pydantic"]),
+]
 
 
-
-# def
-def Requests():
-    os.system('pip uninstall Requests')
-    messagebox.showinfo('pip uninstall', ok2)
-    pass
-def django():
-    os.system('pip uninstall django')
-    messagebox.showinfo(uninstall, ok2)
-    pass
-def fastAPI():
-    os.system('pip uninstall fastapi')
-    messagebox.showinfo(uninstall, ok2)
-def sanic():
-    os.system('pip uninstall sanic')
-    messagebox.showinfo(uninstall, ok2)
-def nameko():
-    os.system('pip uninstall nameko')
-    messagebox.showinfo(uninstall, ok2)
-def pydantic():
-    os.system('pip uninstall pydantic')
-    messagebox.showinfo(uninstall, ok2)
-def fh():
-    root.destroy()
-    pass
+def main() -> None:
+    window = ScrollWindow(title="web", geometry="220x260+100+30", header="web类删除")
+    window.add_button("返回", window.root.destroy)
+    for label, packages in ACTIONS:
+        window.add_button(label, make_pip_action("uninstall", packages, use_mirror=False))
+    window.run()
 
 
-# Button
-bt_fh = Button(frame, text='pydantic删除', command=fh)
-bt_r = Button(frame, text='requests删除', command=Requests)
-bt_d = Button(frame, text='django删除', command=django)
-bt_fastapi = Button(frame, text='fastAPI删除', command=fastAPI)
-bt_sanic = Button(frame, text='sanic删除', command=sanic)
-bt_nameko = Button(frame, text='namekos删除', command=nameko)
-bt_pydantic = Button(frame, text='pydantic删除', command=pydantic)
-bt_fh = Button(frame, text='pydantic删除', command=fh)
-
-# pack and Label
-Label(root, text='web类删除').pack()
-bt_fh.pack()
-bt_d.pack()
-bt_r.pack()
-bt_fastapi.pack()
-bt_sanic.pack()
-bt_nameko.pack()
-bt_pydantic.pack()
-
-
-
-# mainloop
-root.title('web')
-root.geometry('200x230+100+30')
-root.mainloop()
+if __name__ == "__main__":
+    main()
