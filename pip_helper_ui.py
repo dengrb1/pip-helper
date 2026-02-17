@@ -73,7 +73,21 @@ def make_pip_action(action: str, packages: Sequence[str], use_mirror: bool = Tru
     return handler
 
 
+
+
+def _ensure_runtime_paths() -> None:
+    candidates = [str(BASE_DIR)]
+    meipass = getattr(sys, "_MEIPASS", None)
+    if meipass:
+        candidates.append(str(Path(meipass)))
+
+    for path in candidates:
+        if path and path not in sys.path:
+            sys.path.insert(0, path)
+
+
 def _run_script_fallback(exe_name: str) -> bool:
+    _ensure_runtime_paths()
     candidates = [BASE_DIR / f"{exe_name}.pyw", BASE_DIR / f"{exe_name}.py"]
     meipass = getattr(sys, "_MEIPASS", None)
     if meipass:

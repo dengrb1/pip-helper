@@ -27,6 +27,7 @@ jobs:
         shell: pwsh
         run: |
           pyinstaller --noconfirm --clean --onefile --windowed --name pip-helper `
+            --hidden-import pip_helper_ui `
             --add-data "client.pyw;." `
             --add-data "install.pyw;." `
             --add-data "delete.pyw;." `
@@ -41,6 +42,7 @@ jobs:
             --add-data "maths_delete.pyw;." `
             --add-data "game_install.pyw;." `
             --add-data "game_delete.pyw;." `
+            --add-data "pip_helper_ui.py;." `
             python_jc.py
 
       - name: Upload artifact
